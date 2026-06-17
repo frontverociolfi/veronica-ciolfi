@@ -15,6 +15,10 @@
   border-radius: 24px;
   background: color-mix(in srgb, var(--color-surface-deep) 92%, black);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-base-100) 8%, transparent);
+  opacity: 0;
+  animation: list-card-blur-in 820ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--item-index, 0) * 90ms);
+  will-change: opacity, transform, filter;
 }
 
 .post-cover {
@@ -92,6 +96,20 @@
   text-transform: uppercase;
 }
 
+@keyframes list-card-blur-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 @media (max-width: 720px) {
   .post-card {
     grid-template-columns: 1fr;
@@ -99,6 +117,15 @@
 
   .post-cover {
     min-height: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-card {
+    opacity: 1;
+    animation: none;
+    filter: none;
+    transform: none;
   }
 }
 

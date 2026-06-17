@@ -1,6 +1,6 @@
 <section class="post-list" [attr.aria-label]="i18n.t('blog.listAria')">
-  @for (post of posts; track post.slug) {
-    <article class="post-card">
+  @for (post of posts; track post.slug; let index = $index) {
+    <article class="post-card" [style.--item-index]="index">
       <div class="post-cover" aria-hidden="true">
         <span>{{ post.cover }}</span>
       </div>

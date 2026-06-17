@@ -1,6 +1,6 @@
 <section class="project-gallery" [attr.aria-label]="i18n.t('projects.galleryAria')">
-  @for (project of projects; track project.slug) {
-    <article class="project-card">
+  @for (project of projects; track project.slug; let index = $index) {
+    <article class="project-card" [style.--item-index]="index">
       <div class="project-image" aria-hidden="true">
         <span>{{ project.imageLabel }}</span>
       </div>
