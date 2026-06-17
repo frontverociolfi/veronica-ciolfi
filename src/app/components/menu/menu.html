@@ -1,0 +1,15 @@
+<nav class="menu" aria-label="Primary navigation">
+  @for (item of items; track item.path) {
+    <a
+      class="menu-link"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+      [attr.aria-label]="i18n.t(item.labelKey)"
+      [attr.data-tooltip]="i18n.t(item.labelKey)"
+    >
+      <ng-icon [name]="item.icon" size="22px" strokeWidth="2" aria-hidden="true" />
+      <span class="sr-only">{{ i18n.t(item.labelKey) }}</span>
+    </a>
+  }
+</nav>

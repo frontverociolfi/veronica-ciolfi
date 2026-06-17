@@ -1,0 +1,115 @@
+:host {
+  position: relative;
+  display: block;
+  min-height: 100dvh;
+  overflow: hidden;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-blue-slate) 42%, transparent), transparent 24rem),
+    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--color-coral-glow) 18%, transparent), transparent 20rem),
+    radial-gradient(circle at 78% 82%, color-mix(in srgb, var(--color-silver) 20%, transparent), transparent 28rem),
+    var(--color-page);
+  font-family: var(--font-body);
+  isolation: isolate;
+}
+
+:host::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0 34%, color-mix(in srgb, var(--color-white) 7%, transparent) 46%, transparent 58%),
+    linear-gradient(color-mix(in srgb, var(--color-silver) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-silver) 4%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 76px 76px, 76px 76px;
+  mask-image: radial-gradient(circle at 50% 28%, black, transparent 78%);
+}
+
+:host::after {
+  position: fixed;
+  inset: auto -10% -18% -10%;
+  z-index: -1;
+  height: 42%;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--color-blue-slate) 34%, transparent), transparent 62%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, black 24%, transparent));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.portfolio-shell {
+  position: relative;
+  width: min(100%, 1320px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 38px 40px 28px;
+}
+
+.site-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+vc-theme-toggle {
+  grid-column: 1;
+  justify-self: start;
+}
+
+vc-menu {
+  grid-column: 2;
+}
+
+vc-language-toggle {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.page-content {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .portfolio-shell {
+    padding: 28px 20px;
+  }
+
+  .site-header {
+    justify-content: stretch;
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-shell {
+    padding: 22px 14px 24px;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  vc-menu {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: stretch;
+  }
+
+  vc-theme-toggle {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  vc-language-toggle {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

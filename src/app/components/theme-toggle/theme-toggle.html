@@ -1,0 +1,14 @@
+<button
+  type="button"
+  class="theme-toggle"
+  [class.light]="theme.mode() === 'light'"
+  [attr.aria-label]="i18n.t('shell.themeToggle')"
+  [attr.aria-pressed]="theme.mode() === 'light'"
+  (click)="theme.toggle()"
+>
+  <span class="theme-track" aria-hidden="true">
+    <span class="theme-thumb">
+      <ng-icon [name]="theme.mode() === 'light' ? 'heroSun' : 'heroMoon'" size="16px" />
+    </span>
+  </span>
+</button>

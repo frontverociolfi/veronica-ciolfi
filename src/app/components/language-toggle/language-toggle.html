@@ -1,0 +1,22 @@
+<div class="language-toggle" [attr.aria-label]="i18n.t('shell.languageToggle')">
+  <button
+    type="button"
+    class="language-button"
+    [class.active]="i18n.locale() === 'pt-BR'"
+    [attr.aria-pressed]="i18n.locale() === 'pt-BR'"
+    [attr.aria-label]="i18n.t('language.pt')"
+    (click)="i18n.setLocale('pt-BR')"
+  >
+    <ng-icon name="flagBr" size="24px" aria-hidden="true" />
+  </button>
+  <button
+    type="button"
+    class="language-button"
+    [class.active]="i18n.locale() === 'en-US'"
+    [attr.aria-pressed]="i18n.locale() === 'en-US'"
+    [attr.aria-label]="i18n.t('language.en')"
+    (click)="i18n.setLocale('en-US')"
+  >
+    <ng-icon name="flagUs" size="24px" aria-hidden="true" />
+  </button>
+</div>
