@@ -1,77 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
 
 :root {
-  --color-jet-black: #2d3142;
-  --color-silver: #bfc0c0;
-  --color-white: #ffffff;
-  --color-coral-glow: #ef8354;
-  --color-blue-slate: #4f5d75;
-  --color-eggshell: #f4f1de;
-  --color-burnt-peach: #e07a5f;
-  --color-twilight-indigo: #3d405b;
-  --color-muted-teal-alt: #81b29a;
-  --color-apricot-cream: #f2cc8f;
-  --color-regal-navy: #0d3b66;
-  --color-cornsilk: #faf0ca;
-  --color-royal-gold: #f4d35e;
-  --color-sandy-brown: #ee964b;
-  --color-tomato: #f95738;
+  --color-base-900: #011627;
+  --color-base-0: #eff1f3;
+  --color-base-100: color-mix(in srgb, var(--color-base-0) 84%, var(--color-base-900));
+  --color-accent-400: #8ecae6;
+  --color-accent-700: #219ebc;
 
-  --color-palette-graphite: #2d3142;
-  --color-palette-graphite-accent: #ef8354;
-
-  --color-deep-space-blue: var(--color-jet-black);
-  --color-teal: var(--color-blue-slate);
-  --color-pale-sky: var(--color-silver);
-  --color-vibrant-coral: var(--color-coral-glow);
-  --color-flag-red: var(--color-blue-slate);
-
-  --color-page: var(--color-jet-black);
-  --color-surface: color-mix(in srgb, var(--color-jet-black) 82%, var(--color-blue-slate));
-  --color-surface-deep: color-mix(in srgb, var(--color-jet-black) 90%, black);
-  --color-text: var(--color-white);
-  --color-text-muted: var(--color-silver);
-  --color-accent: var(--color-coral-glow);
-  --color-accent-strong: var(--color-blue-slate);
-  --color-focus: var(--color-coral-glow);
+  --color-page: var(--color-base-900);
+  --color-surface: color-mix(in srgb, var(--color-base-900) 92%, var(--color-base-0));
+  --color-surface-deep: color-mix(in srgb, var(--color-base-900) 96%, black);
+  --color-text: var(--color-base-0);
+  --color-text-muted: color-mix(in srgb, var(--color-base-0) 70%, var(--color-base-900));
+  --color-accent: var(--color-accent-400);
+  --color-accent-strong: var(--color-accent-700);
+  --color-focus: var(--color-accent-400);
 
   --font-body: "Victor Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --font-display: "Victor Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-html[data-palette="graphite"] {
-  --color-jet-black: var(--color-palette-graphite);
-  --color-silver: #bfc0c0;
-  --color-white: #ffffff;
-  --color-coral-glow: var(--color-palette-graphite-accent);
-  --color-blue-slate: #4f5d75;
-}
-
-html[data-palette="eggshell"] {
-  --color-jet-black: var(--color-twilight-indigo);
-  --color-silver: var(--color-muted-teal-alt);
-  --color-white: var(--color-eggshell);
-  --color-coral-glow: var(--color-burnt-peach);
-  --color-blue-slate: var(--color-apricot-cream);
-}
-
-html[data-palette="regal"] {
-  --color-jet-black: var(--color-regal-navy);
-  --color-silver: var(--color-cornsilk);
-  --color-white: #fffdf3;
-  --color-coral-glow: var(--color-tomato);
-  --color-blue-slate: var(--color-royal-gold);
-}
-
 html[data-theme="light"] {
-  --color-page: var(--color-white);
-  --color-surface: color-mix(in srgb, var(--color-white) 84%, var(--color-silver));
-  --color-surface-deep: color-mix(in srgb, var(--color-silver) 42%, var(--color-white));
-  --color-text: var(--color-jet-black);
-  --color-text-muted: color-mix(in srgb, var(--color-jet-black) 68%, var(--color-blue-slate));
-  --color-accent: var(--color-coral-glow);
-  --color-accent-strong: var(--color-blue-slate);
-  --color-focus: var(--color-blue-slate);
+  --color-page: color-mix(in srgb, var(--color-base-0) 98%, var(--color-base-900));
+  --color-surface: color-mix(in srgb, var(--color-base-0) 93%, var(--color-base-900));
+  --color-surface-deep: color-mix(in srgb, var(--color-base-0) 88%, var(--color-accent-400));
+  --color-text: var(--color-base-900);
+  --color-text-muted: color-mix(in srgb, var(--color-base-900) 58%, var(--color-base-0));
+  --color-accent: var(--color-accent-700);
+  --color-accent-strong: var(--color-accent-700);
+  --color-focus: var(--color-accent-700);
 }
 
 html {

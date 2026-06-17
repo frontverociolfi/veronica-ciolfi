@@ -10,7 +10,7 @@
   border-radius: 26px;
   place-items: center;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--color-pale-sky) 88%, white), color-mix(in srgb, var(--color-teal) 35%, transparent)),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-base-100) 88%, white), color-mix(in srgb, var(--color-accent-700) 35%, transparent)),
     url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 234C61 203 99 196 142 148C187 97 226 82 320 67V320H0Z' fill='%23ef8354' fill-opacity='.72'/%3E%3Cpath d='M0 98C57 119 102 104 156 62C207 22 255 12 320 28V0H0Z' fill='%234f5d75' fill-opacity='.46'/%3E%3C/svg%3E");
   background-size: cover;
 }
@@ -33,3 +33,4 @@
     height: 100%;
   }
 }
+

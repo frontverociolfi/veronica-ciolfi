@@ -9,10 +9,10 @@
   place-items: center;
   overflow: hidden;
   border-radius: 26px;
-  color: var(--color-white);
+  color: var(--color-base-0);
   text-decoration: none;
   background:
-    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--color-white) 14%, transparent), transparent 7rem),
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--color-base-0) 14%, transparent), transparent 7rem),
     linear-gradient(135deg, color-mix(in srgb, var(--color-accent-strong) 78%, black), var(--color-accent));
   box-shadow: 0 22px 44px color-mix(in srgb, var(--color-accent) 18%, transparent);
   transition:
@@ -53,3 +53,4 @@
     height: 100%;
   }
 }
+

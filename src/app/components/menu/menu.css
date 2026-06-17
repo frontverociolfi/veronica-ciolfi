@@ -7,7 +7,7 @@
   align-items: center;
   gap: 14px;
   padding: 10px 16px;
-  border: 1px solid color-mix(in srgb, var(--color-pale-sky) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-base-100) 7%, transparent);
   border-radius: 16px;
   background: color-mix(in srgb, var(--color-surface-deep) 88%, black);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
@@ -41,17 +41,17 @@
 
 .menu-link:hover,
 .menu-link:focus-visible {
-  color: var(--color-pale-sky);
+  color: var(--color-base-100);
   transform: translateY(-4px) scale(1.16);
 }
 
 .menu-link:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-pale-sky) 32%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-base-100) 32%, transparent);
 }
 
 .menu-link.active {
-  color: var(--color-deep-space-blue);
-  background: var(--color-pale-sky);
+  color: var(--color-base-900);
+  background: var(--color-base-100);
 }
 
 .menu-link::before {
@@ -60,7 +60,7 @@
   left: 50%;
   z-index: 1;
   padding: 7px 9px;
-  border: 1px solid color-mix(in srgb, var(--color-pale-sky) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-base-100) 12%, transparent);
   border-radius: 8px;
   color: var(--color-text);
   background: color-mix(in srgb, var(--color-surface-deep) 92%, black);
@@ -125,3 +125,4 @@
     padding: 10px;
   }
 }
+

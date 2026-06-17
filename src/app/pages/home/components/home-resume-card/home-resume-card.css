@@ -8,27 +8,27 @@
   flex-direction: column;
   justify-content: center;
   padding: 30px;
-  color: var(--color-deep-space-blue);
+  color: var(--color-base-900);
   text-decoration: none;
   overflow: hidden;
   border-radius: 26px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--color-vibrant-coral) 92%, white), var(--color-flag-red)),
-    var(--color-vibrant-coral);
-  box-shadow: 0 24px 70px color-mix(in srgb, var(--color-flag-red) 22%, transparent);
+    linear-gradient(135deg, color-mix(in srgb, var(--color-accent-400) 92%, white), var(--color-accent-700)),
+    var(--color-accent-400);
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--color-accent-700) 22%, transparent);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .resume-card:hover,
 .resume-card:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 30px 90px color-mix(in srgb, var(--color-flag-red) 34%, transparent);
+  box-shadow: 0 30px 90px color-mix(in srgb, var(--color-accent-700) 34%, transparent);
 }
 
 .resume-card h2 {
   max-width: 280px;
   margin: 0 0 16px;
-  color: var(--color-deep-space-blue);
+  color: var(--color-base-900);
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 2.4vw, 2.05rem);
   font-weight: 700;
@@ -38,7 +38,7 @@
 
 .resume-card p {
   margin: 0 0 24px;
-  color: color-mix(in srgb, var(--color-deep-space-blue) 78%, black);
+  color: color-mix(in srgb, var(--color-base-900) 78%, black);
   font-size: 0.9rem;
   font-weight: 650;
   line-height: 1.55;
@@ -51,7 +51,7 @@
   gap: 10px;
   padding: 10px 14px;
   border-radius: 999px;
-  color: var(--color-white);
+  color: var(--color-base-0);
   background: var(--color-surface-deep);
   font-size: 0.78rem;
   font-weight: 850;
@@ -99,3 +99,4 @@
     line-height: 1.45;
   }
 }
+

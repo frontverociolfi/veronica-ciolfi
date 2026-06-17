@@ -9,7 +9,6 @@ export type TranslationKey =
   | 'menu.projects'
   | 'menu.blog'
   | 'shell.navigation'
-  | 'shell.routeLoading'
   | 'shell.languageToggle'
   | 'shell.themeToggle'
   | 'theme.dark'
@@ -126,7 +125,6 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'menu.projects': 'Projetos',
     'menu.blog': 'Blog',
     'shell.navigation': 'Navegacao principal',
-    'shell.routeLoading': 'Carregando pagina',
     'shell.languageToggle': 'Alterar idioma',
     'shell.themeToggle': 'Alterar tema',
     'theme.dark': 'Escuro',
@@ -246,7 +244,6 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'menu.projects': 'Projects',
     'menu.blog': 'Blog',
     'shell.navigation': 'Main navigation',
-    'shell.routeLoading': 'Loading page',
     'shell.languageToggle': 'Change language',
     'shell.themeToggle': 'Change theme',
     'theme.dark': 'Dark',

@@ -1,9 +1,4 @@
 <div class="portfolio-shell">
-  <vc-loading-overlay
-    [active]="routerLoading.isVisible()"
-    [label]="i18n.t('shell.routeLoading')"
-  />
-
   <header class="site-header" [attr.aria-label]="i18n.t('shell.navigation')">
     <vc-theme-toggle />
     <vc-menu />
@@ -16,6 +11,5 @@
 
   <footer class="site-footer">
     <span class="footer-copy">Veronica Ciolfi @ 2026</span>
-    <vc-palette-switch />
   </footer>
 </div>

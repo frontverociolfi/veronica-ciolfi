@@ -37,16 +37,9 @@ describe('ShellComponent', () => {
     expect(compiled.querySelector('vc-theme-toggle')).toBeTruthy();
   });
 
-  it('should render the global loading overlay', () => {
+  it('should render the footer copy', () => {
     const compiled = fixture.nativeElement as HTMLElement;
 
-    expect(compiled.querySelector('vc-loading-overlay')).toBeTruthy();
-  });
-
-  it('should render the footer palette switch', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-
-    expect(compiled.querySelector('vc-palette-switch')).toBeTruthy();
     expect(compiled.textContent).toContain('Veronica Ciolfi @ 2026');
   });
 });

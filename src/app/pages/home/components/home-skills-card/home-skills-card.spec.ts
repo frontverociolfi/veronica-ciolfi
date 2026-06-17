@@ -11,7 +11,7 @@ describe('HomeSkillsCardComponent', () => {
 
     fixture = TestBed.createComponent(HomeSkillsCardComponent);
     fixture.componentInstance.skills = [
-      { name: 'Angular', level: 95, icon: 'heroCodeBracket', color: 'var(--color-vibrant-coral)' },
+      { name: 'Angular', level: 95, icon: 'heroCodeBracket', color: 'var(--color-accent-400)' },
     ];
     fixture.detectChanges();
   });
@@ -20,4 +20,5 @@ describe('HomeSkillsCardComponent', () => {
     expect(fixture.nativeElement.textContent).toContain('Angular');
   });
 });
+
 

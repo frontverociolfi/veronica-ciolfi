@@ -13,7 +13,7 @@
   overflow: hidden;
   border-radius: 24px;
   background: color-mix(in srgb, var(--color-surface-deep) 92%, black);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-pale-sky) 8%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-base-100) 8%, transparent);
 }
 
 .project-image {
@@ -22,13 +22,13 @@
   place-items: end start;
   padding: 24px;
   background:
-    linear-gradient(160deg, color-mix(in srgb, var(--color-blue-slate) 82%, black), color-mix(in srgb, var(--color-accent) 62%, white)),
-    var(--color-blue-slate);
+    linear-gradient(160deg, color-mix(in srgb, var(--color-accent-700) 82%, black), color-mix(in srgb, var(--color-accent) 62%, white)),
+    var(--color-accent-700);
 }
 
 .project-image span {
   max-width: 12ch;
-  color: color-mix(in srgb, var(--color-white) 88%, transparent);
+  color: color-mix(in srgb, var(--color-base-0) 88%, transparent);
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-style: italic;
@@ -113,3 +113,4 @@
     min-height: 180px;
   }
 }
+

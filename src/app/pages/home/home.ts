@@ -80,25 +80,25 @@ export class Home {
       name: 'Angular',
       level: 95,
       icon: 'heroCodeBracket',
-      color: 'var(--color-vibrant-coral)',
+      color: 'var(--color-accent-400)',
     },
     {
       name: 'TypeScript',
       level: 90,
       icon: 'heroCommandLine',
-      color: 'var(--color-teal)',
+      color: 'var(--color-accent-700)',
     },
     {
       name: 'Node.js',
       level: 82,
       icon: 'heroCpuChip',
-      color: 'var(--color-pale-sky)',
+      color: 'var(--color-base-100)',
     },
     {
       name: 'Creative UI',
       level: 88,
       icon: 'heroRocketLaunch',
-      color: 'var(--color-flag-red)',
+      color: 'var(--color-accent-700)',
     },
   ];
 
@@ -139,3 +139,4 @@ export class Home {
 
   constructor(readonly i18n: I18nService) {}
 }
+

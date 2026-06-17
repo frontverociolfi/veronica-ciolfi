@@ -11,7 +11,7 @@
   background:
     radial-gradient(circle at 88% 14%, color-mix(in srgb, var(--color-accent-strong) 18%, transparent), transparent 10rem),
     color-mix(in srgb, var(--color-surface) 84%, var(--color-page));
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-pale-sky) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-base-100) 12%, transparent);
 }
 
 .card-head {
@@ -28,8 +28,8 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  color: var(--color-deep-space-blue);
-  background: color-mix(in srgb, var(--color-pale-sky) 88%, white);
+  color: var(--color-base-900);
+  background: color-mix(in srgb, var(--color-base-100) 88%, white);
   font-size: 0.72rem;
   font-weight: 850;
   line-height: 1;
@@ -70,14 +70,14 @@
   border-radius: 18px;
   color: inherit;
   text-decoration: none;
-  background: color-mix(in srgb, var(--color-white) 14%, transparent);
+  background: color-mix(in srgb, var(--color-base-0) 14%, transparent);
   transition: transform 180ms ease, background 180ms ease;
 }
 
 .item-card:hover,
 .item-card:focus-visible {
   transform: translateY(-2px);
-  background: color-mix(in srgb, var(--color-white) 20%, transparent);
+  background: color-mix(in srgb, var(--color-base-0) 20%, transparent);
 }
 
 .item-meta {
@@ -106,3 +106,4 @@
   font-size: 0.82rem;
   line-height: 1.55;
 }
+

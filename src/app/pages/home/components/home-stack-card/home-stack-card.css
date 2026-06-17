@@ -9,8 +9,8 @@
   overflow: hidden;
   border-radius: 26px;
   background:
-    radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--color-vibrant-coral) 18%, transparent), transparent 12rem),
-    color-mix(in srgb, var(--color-pale-sky) 82%, var(--color-teal));
+    radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--color-accent-400) 18%, transparent), transparent 12rem),
+    color-mix(in srgb, var(--color-base-100) 82%, var(--color-accent-700));
 }
 
 .label {
@@ -20,8 +20,8 @@
   margin: 0 30px 12px;
   padding: 8px 12px;
   border-radius: 999px;
-  color: var(--color-pale-sky);
-  background: color-mix(in srgb, var(--color-deep-space-blue) 72%, transparent);
+  color: var(--color-base-100);
+  background: color-mix(in srgb, var(--color-base-900) 72%, transparent);
   font-size: 0.72rem;
   font-weight: 850;
   line-height: 1;
@@ -32,12 +32,12 @@
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: var(--color-vibrant-coral);
+  background: var(--color-accent-400);
 }
 
 .stack-card h2 {
   margin: 0 30px 20px;
-  color: var(--color-deep-space-blue);
+  color: var(--color-base-900);
   font-family: var(--font-display);
   font-size: clamp(1rem, 1.4vw, 1.35rem);
   font-weight: 600;
@@ -67,8 +67,8 @@
   justify-content: center;
   padding: 0 18px;
   border-radius: 999px;
-  color: var(--color-deep-space-blue);
-  background: color-mix(in srgb, var(--color-deep-space-blue) 10%, transparent);
+  color: var(--color-base-900);
+  background: color-mix(in srgb, var(--color-base-900) 10%, transparent);
   font-size: 0.86rem;
   font-weight: 650;
   white-space: nowrap;
@@ -85,3 +85,4 @@
     animation: none;
   }
 }
+

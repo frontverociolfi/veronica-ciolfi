@@ -20,7 +20,7 @@
   width: 58px;
   padding: 4px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-pale-sky) 30%, transparent);
+  background: color-mix(in srgb, var(--color-base-100) 30%, transparent);
 }
 
 .theme-thumb {
@@ -29,8 +29,8 @@
   height: 26px;
   place-items: center;
   border-radius: 50%;
-  color: var(--color-deep-space-blue);
-  background: var(--color-pale-sky);
+  color: var(--color-base-900);
+  background: var(--color-base-100);
   transition: transform 180ms ease;
 }
 
@@ -50,7 +50,7 @@
 
 .theme-toggle:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-pale-sky) 32%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-base-100) 32%, transparent);
 }
 
 .theme-text {
@@ -97,3 +97,4 @@
     justify-content: center;
   }
 }
+
