@@ -14,13 +14,16 @@ describe('HomeSocialCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('renders the social mark', () => {
-    expect(fixture.nativeElement.textContent).toContain('in');
+  it('renders the linkedin icon', () => {
+    const icon = fixture.nativeElement.querySelector('ng-icon[name="remixLinkedinFill"]');
+
+    expect(icon).not.toBeNull();
   });
 
   it('uses the full card as an external link', () => {
     const link: HTMLAnchorElement | null = fixture.nativeElement.querySelector('a');
 
     expect(link?.getAttribute('href')).toBe('https://www.linkedin.com/in/veronica-ciolfi/');
+    expect(link?.getAttribute('target')).toBe('_blank');
   });
 });

@@ -8,12 +8,12 @@
   place-items: center;
   overflow: hidden;
   border-radius: 26px;
-  color: var(--color-base-100);
+  color: #ffffff;
   text-decoration: none;
   background:
-    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--color-base-100) 22%, transparent), transparent 8rem),
-    linear-gradient(135deg, var(--color-accent-700), var(--color-base-900));
-  box-shadow: 0 22px 44px color-mix(in srgb, var(--color-base-900) 22%, transparent);
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, white 20%, transparent), transparent 8rem),
+    linear-gradient(135deg, color-mix(in srgb, #005f99 88%, black), #0a66c2);
+  box-shadow: 0 22px 44px rgb(10 102 194 / 24%);
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -35,7 +35,7 @@
 .social-card:hover,
 .social-card:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 28px 52px color-mix(in srgb, var(--color-accent-700) 24%, transparent);
+  box-shadow: 0 28px 52px rgb(10 102 194 / 32%);
   filter: saturate(1.06);
 }
 
@@ -44,11 +44,8 @@
   outline-offset: 4px;
 }
 
-.social-card span {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(4.6rem, 8vw, 6.5rem);
-  font-weight: 800;
-  letter-spacing: -0.08em;
-  line-height: 1;
+.social-card ng-icon {
+  font-size: clamp(3.5rem, 6vw, 4.75rem);
+  filter: drop-shadow(0 8px 18px rgb(0 0 0 / 16%));
 }
 

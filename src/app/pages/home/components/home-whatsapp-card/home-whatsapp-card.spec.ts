@@ -14,13 +14,16 @@ describe('HomeWhatsappCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('renders the whatsapp mark', () => {
-    expect(fixture.nativeElement.textContent).toContain('wa');
+  it('renders the whatsapp icon', () => {
+    const icon = fixture.nativeElement.querySelector('ng-icon[name="remixWhatsappFill"]');
+
+    expect(icon).not.toBeNull();
   });
 
   it('uses the full card as an external link', () => {
     const link: HTMLAnchorElement | null = fixture.nativeElement.querySelector('a');
 
     expect(link?.getAttribute('href')).toContain('wa.me/5514991947676');
+    expect(link?.getAttribute('target')).toBe('_blank');
   });
 });

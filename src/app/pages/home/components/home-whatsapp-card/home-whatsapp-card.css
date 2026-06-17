@@ -12,9 +12,9 @@
   color: var(--color-base-0);
   text-decoration: none;
   background:
-    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--color-base-0) 14%, transparent), transparent 7rem),
-    linear-gradient(135deg, color-mix(in srgb, var(--color-accent-strong) 78%, black), var(--color-accent));
-  box-shadow: 0 22px 44px color-mix(in srgb, var(--color-accent) 18%, transparent);
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, white 18%, transparent), transparent 7rem),
+    linear-gradient(135deg, color-mix(in srgb, #128c4a 88%, black), #25d366);
+  box-shadow: 0 22px 44px rgb(37 211 102 / 24%);
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -24,7 +24,7 @@
 .whatsapp-card:hover,
 .whatsapp-card:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 28px 52px color-mix(in srgb, var(--color-accent) 24%, transparent);
+  box-shadow: 0 28px 52px rgb(37 211 102 / 32%);
   filter: saturate(1.06);
 }
 
@@ -33,13 +33,9 @@
   outline-offset: 4px;
 }
 
-.whatsapp-card span {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(4.4rem, 8vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -0.08em;
-  line-height: 1;
-  text-transform: lowercase;
+.whatsapp-card ng-icon {
+  font-size: clamp(3.5rem, 6vw, 4.75rem);
+  filter: drop-shadow(0 8px 18px rgb(0 0 0 / 16%));
 }
 
 @media (max-width: 1000px) {
