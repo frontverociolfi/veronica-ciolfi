@@ -1,0 +1,19 @@
+<article class="stack-card" [attr.aria-label]="i18n.t('home.stackAria')">
+  <p class="label">
+    <span aria-hidden="true"></span>
+    {{ i18n.t('home.stackLabel') }}
+  </p>
+  <h2>{{ i18n.t('home.stackTitle') }}</h2>
+
+  <div class="stack-marquee" aria-hidden="true">
+    <div class="stack-list">
+      @for (repeat of repeats; track repeat) {
+        <div class="stack-sequence">
+          @for (tool of stack; track $index) {
+            <span>{{ tool }}</span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</article>

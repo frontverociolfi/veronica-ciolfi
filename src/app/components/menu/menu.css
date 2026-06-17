@@ -95,7 +95,25 @@
   border: 0;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 425px) {
+  .menu {
+    gap: 6px;
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .menu-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .menu-link::before {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
   :host,
   .menu {
     width: 100%;

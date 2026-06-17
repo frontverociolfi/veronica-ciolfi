@@ -1,0 +1,26 @@
+<nav class="pagination" [attr.aria-label]="ariaLabel">
+  <button
+    type="button"
+    class="pagination-button"
+    [disabled]="currentPage === 1"
+    (click)="previous.emit()"
+  >
+    {{ i18n.t('pagination.previous') }}
+  </button>
+
+  <p class="pagination-status">
+    {{ i18n.t('pagination.page') }} {{ currentPage }} {{ i18n.t('pagination.of') }} {{ totalPages }}
+    @if (totalItems > 0) {
+      <span class="pagination-total">{{ totalItems }} {{ i18n.t('pagination.items') }}</span>
+    }
+  </p>
+
+  <button
+    type="button"
+    class="pagination-button"
+    [disabled]="currentPage === totalPages"
+    (click)="next.emit()"
+  >
+    {{ i18n.t('pagination.next') }}
+  </button>
+</nav>

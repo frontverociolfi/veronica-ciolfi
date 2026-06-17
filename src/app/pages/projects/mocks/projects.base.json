@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "veronica-portfolio",
+    "technologies": ["Angular", "TypeScript", "CSS", "SSR"],
+    "externalUrl": "https://example.com/veronica-portfolio"
+  },
+  {
+    "slug": "document-flow-platform",
+    "technologies": ["Angular", "RxJS", "Azure", "Vitest"],
+    "externalUrl": "https://example.com/document-flow-platform"
+  },
+  {
+    "slug": "onboarding-experience-suite",
+    "technologies": ["Angular", "Sass", "Bootstrap", "TypeScript"],
+    "externalUrl": "https://example.com/onboarding-experience-suite"
+  },
+  {
+    "slug": "mobile-benefits-redesign",
+    "technologies": ["React Native", "Design Systems", "UX", "Mobile"],
+    "externalUrl": "https://example.com/mobile-benefits-redesign"
+  }
+]

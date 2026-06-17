@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.social-card {
+  display: grid;
+  height: 210px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 26px;
+  color: var(--color-pale-sky);
+  text-decoration: none;
+  background:
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--color-pale-sky) 22%, transparent), transparent 8rem),
+    linear-gradient(135deg, var(--color-teal), var(--color-deep-space-blue));
+  box-shadow: 0 22px 44px color-mix(in srgb, var(--color-deep-space-blue) 22%, transparent);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+@media (max-width: 1000px) {
+  .social-card {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-card {
+    height: 100%;
+  }
+}
+
+.social-card:hover,
+.social-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 52px color-mix(in srgb, var(--color-teal) 24%, transparent);
+  filter: saturate(1.06);
+}
+
+.social-card:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.social-card span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(4.6rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}

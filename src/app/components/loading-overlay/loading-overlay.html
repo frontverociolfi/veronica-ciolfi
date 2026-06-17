@@ -1,0 +1,18 @@
+<div
+  class="loading-overlay"
+  [class.is-active]="active()"
+  [attr.aria-hidden]="!active()"
+>
+  <div class="loading-overlay__backdrop"></div>
+
+  <div class="loading-overlay__center" role="status" [attr.aria-label]="label()">
+    <div class="loading-overlay__halo loading-overlay__halo--outer"></div>
+    <div class="loading-overlay__halo loading-overlay__halo--inner"></div>
+
+    <div class="loading-overlay__logo-shell">
+      <img class="loading-overlay__logo" src="/vc-logo.svg" alt="" />
+    </div>
+
+    <span class="loading-overlay__sr-only">{{ label() }}</span>
+  </div>
+</div>

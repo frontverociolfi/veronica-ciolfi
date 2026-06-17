@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.projects-page {
+  display: grid;
+  gap: 28px;
+  padding: 56px 0 20px;
+}
+
+.projects-header {
+  display: grid;
+  gap: 14px;
+  max-width: 820px;
+}
+
+.projects-kicker,
+.projects-header h1,
+.projects-description {
+  margin: 0;
+}
+
+.projects-kicker {
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.projects-header h1 {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.projects-description {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 680px) {
+  .projects-page {
+    padding-top: 40px;
+  }
+}

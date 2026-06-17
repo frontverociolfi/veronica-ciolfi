@@ -1,0 +1,28 @@
+<article class="skills-card" [attr.aria-label]="i18n.t('home.skillsAria')">
+  <h2>{{ i18n.t('home.skillsTitle') }}</h2>
+
+  <div class="skills-list">
+    @for (skill of skills; track skill.name) {
+      <div class="skill-row" [style.--skill-color]="skill.color">
+        <div class="skill-heading">
+          <span class="skill-name">
+            <ng-icon [name]="skill.icon" size="18px" strokeWidth="2" aria-hidden="true" />
+            {{ skill.name }}
+          </span>
+          <span class="skill-value">{{ skill.level }}%</span>
+        </div>
+
+        <div
+          class="skill-track"
+          role="progressbar"
+          [attr.aria-label]="skill.name"
+          [attr.aria-valuenow]="skill.level"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <span class="skill-fill" [style.width.%]="skill.level"></span>
+        </div>
+      </div>
+    }
+  </div>
+</article>

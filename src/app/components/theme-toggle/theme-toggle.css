@@ -61,7 +61,33 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 425px) {
+  .theme-toggle {
+    height: 40px;
+    padding: 4px;
+  }
+
+  .theme-track {
+    width: 48px;
+    padding: 3px;
+  }
+
+  .theme-thumb {
+    width: 22px;
+    height: 22px;
+  }
+
+  .theme-toggle.light .theme-thumb {
+    transform: translateX(20px);
+  }
+
+  .theme-toggle.light:hover .theme-thumb,
+  .theme-toggle.light:focus-visible .theme-thumb {
+    transform: translateX(20px) scale(1.08);
+  }
+}
+
+@media (max-width: 320px) {
   :host,
   .theme-toggle {
     width: 100%;

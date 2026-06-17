@@ -1,0 +1,79 @@
+:host {
+  display: block;
+}
+
+.experience-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 34px;
+  overflow: hidden;
+  border-radius: 26px;
+  background: color-mix(in srgb, var(--color-surface-deep) 92%, black);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-pale-sky) 8%, transparent);
+}
+
+.experience-card h2 {
+  margin: 0 0 30px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.experience-list {
+  display: grid;
+  gap: 18px;
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.experience-row div {
+  display: grid;
+  gap: 5px;
+}
+
+.experience-row strong {
+  color: var(--color-text);
+  font-size: 0.96rem;
+}
+
+.experience-row span,
+.experience-row time {
+  color: color-mix(in srgb, var(--color-text-muted) 72%, var(--color-text));
+  font-size: 0.86rem;
+}
+
+.experience-row time {
+  white-space: nowrap;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.label span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-text);
+}

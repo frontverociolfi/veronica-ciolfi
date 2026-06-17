@@ -1,0 +1,115 @@
+:host {
+  display: block;
+}
+
+.latest-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 82% 14%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 10rem),
+    color-mix(in srgb, var(--color-surface-deep) 93%, black);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-pale-sky) 8%, transparent);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.label span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-text);
+}
+
+.card-link {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.latest-card h2 {
+  margin: 0 0 22px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+}
+
+.item-list {
+  display: grid;
+  gap: 14px;
+}
+
+.item-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  color: inherit;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--color-page) 18%, transparent);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.item-card:hover,
+.item-card:focus-visible {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--color-page) 28%, transparent);
+}
+
+.item-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.item-copy strong {
+  color: var(--color-text);
+  font-size: 0.94rem;
+}
+
+.item-copy p {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.item-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.item-pills span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-accent-strong) 24%, transparent);
+  font-size: 0.74rem;
+  font-weight: 700;
+}

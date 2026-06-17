@@ -1,0 +1,14 @@
+<a
+  class="resume-card"
+  [href]="resumePdfUrl"
+  target="_blank"
+  rel="noopener noreferrer"
+  [attr.aria-label]="i18n.t('home.resumeAria')"
+>
+  <h2>{{ i18n.t('home.resumeTitle') }}</h2>
+  <p>{{ i18n.t('home.resumeText') }}</p>
+  <span class="resume-cta">
+    {{ i18n.t('home.resumeCta') }}
+    <span aria-hidden="true">-&gt;</span>
+  </span>
+</a>

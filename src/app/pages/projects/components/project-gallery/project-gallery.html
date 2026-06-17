@@ -1,0 +1,33 @@
+<section class="project-gallery" [attr.aria-label]="i18n.t('projects.galleryAria')">
+  @for (project of projects; track project.slug) {
+    <article class="project-card">
+      <div class="project-image" aria-hidden="true">
+        <span>{{ project.imageLabel }}</span>
+      </div>
+
+      <div class="project-copy">
+        <div class="project-copy-top">
+          <h2>{{ project.name }}</h2>
+          <p>{{ project.summary }}</p>
+        </div>
+
+        <div class="project-copy-bottom">
+          <div class="project-pills">
+            @for (technology of project.technologies; track technology) {
+              <span class="project-pill">{{ technology }}</span>
+            }
+          </div>
+
+          <a
+            class="project-link"
+            [href]="project.externalUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ i18n.t('projects.visitProject') }}
+          </a>
+        </div>
+      </div>
+    </article>
+  }
+</section>

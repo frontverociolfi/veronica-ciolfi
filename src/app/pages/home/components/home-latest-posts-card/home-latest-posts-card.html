@@ -1,0 +1,28 @@
+<article class="latest-card" [attr.aria-label]="i18n.t('home.latestPostsAria')">
+  <div class="card-head">
+    <span class="label">
+      <span></span>
+      {{ i18n.t('home.latestPostsLabel') }}
+    </span>
+
+    <a class="card-link" routerLink="/blog">{{ i18n.t('home.latestPostsCta') }}</a>
+  </div>
+
+  <h2>{{ i18n.t('home.latestPostsTitle') }}</h2>
+
+  <div class="item-list">
+    @for (post of posts; track post.slug) {
+      <a class="item-card" [routerLink]="post.href">
+        <div class="item-meta">
+          <span>{{ post.category }}</span>
+          <time [attr.datetime]="post.publishedAt">{{ post.publishedAt | date: 'MMM d, y' }}</time>
+        </div>
+
+        <div class="item-copy">
+          <strong>{{ post.title }}</strong>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </a>
+    }
+  </div>
+</article>

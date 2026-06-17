@@ -1,0 +1,36 @@
+@if (post(); as post) {
+  <article class="blog-post-page" [attr.aria-label]="i18n.t('blog.articleAria')">
+    <div class="post-shell">
+      <a class="back-link" routerLink="/blog">
+        <ng-icon name="heroArrowLeft" size="16px" aria-hidden="true" />
+        <span>{{ i18n.t('blog.backToBlog') }}</span>
+      </a>
+
+      <header class="post-header">
+        <p class="post-category">{{ post.category }}</p>
+        <h1>{{ post.title }}</h1>
+        <p class="post-excerpt">{{ post.excerpt }}</p>
+
+        <div class="post-meta">
+          <span>{{ post.publishedAt | date: 'MMM d, y' }}</span>
+          <span>{{ post.readingTime }}</span>
+        </div>
+      </header>
+
+      <div class="post-divider" aria-hidden="true"></div>
+
+      <div class="post-content" [innerHTML]="renderedContent()" (click)="onContentClick($event)"></div>
+    </div>
+  </article>
+} @else {
+  <section class="blog-post-page blog-post-empty">
+    <div class="post-shell">
+      <a class="back-link" routerLink="/blog">
+        <ng-icon name="heroArrowLeft" size="16px" aria-hidden="true" />
+        <span>{{ i18n.t('blog.backToBlog') }}</span>
+      </a>
+      <h1>{{ i18n.t('blog.notFound') }}</h1>
+      <p>{{ i18n.t('blog.notFoundText') }}</p>
+    </div>
+  </section>
+}

@@ -6,6 +6,7 @@ import {
   heroBriefcase,
   heroCommandLine,
   heroEnvelope,
+  heroPaperClip,
   heroHome,
 } from '@ng-icons/heroicons/outline';
 
@@ -18,6 +19,7 @@ import {
       heroCommandLine,
       heroEnvelope,
       heroHome,
+      heroPaperClip
     }),
   ],
   templateUrl: './menu.html',
@@ -29,7 +31,6 @@ export class MenuComponent {
   readonly items: ReadonlyArray<{ labelKey: TranslationKey; path: string; icon: string }> = [
     { labelKey: 'menu.home', path: '/', icon: 'heroHome' },
     { labelKey: 'menu.projects', path: '/projects', icon: 'heroCommandLine' },
-    { labelKey: 'menu.cv', path: '/cv', icon: 'heroBriefcase' },
-    { labelKey: 'menu.contact', path: '/contact', icon: 'heroEnvelope' },
+    { labelKey: 'menu.blog', path: '/blog', icon: 'heroPaperClip' },
   ];
 }

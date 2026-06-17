@@ -5,116 +5,65 @@
   </p>
 
   <h1 id="intro-title">
-    Veronica<span>Ciolfi.</span>
+    Veronica <span>Ciolfi.</span>
   </h1>
 </section>
 
-<section class="feature-grid" [attr.aria-label]="i18n.t('home.overviewAria')">
-  <article class="logo-tile" [attr.aria-label]="i18n.t('home.logoAria')">
-    <img src="vc-logo.svg" alt="" aria-hidden="true" />
-  </article>
+<section class="home-layout">
+  <div class="grid-row grid-row-primary">
+    <vc-home-logo-tile class="logo"></vc-home-logo-tile>
+    <vc-home-intro-card class="intro"></vc-home-intro-card>
+    <vc-home-portrait-card class="portrait"></vc-home-portrait-card>
+  </div>
 
-  <article class="intro-card">
-    <p class="label">
-      <span aria-hidden="true"></span>
-      {{ i18n.t('home.aboutLabel') }}
-    </p>
-    <p>
-      {{ i18n.t('home.aboutText') }}
-    </p>
-  </article>
+  <div class="grid-row grid-row-secondary">
+    <vc-home-skills-card
+      class="skills"
+      [skills]="skills">
+    </vc-home-skills-card>
+    <vc-home-resume-card
+      class="resume"
+      [resumePdfUrl]="resumePdfUrl">
+    </vc-home-resume-card>
+  </div>
 
-  <article class="portrait-card" [attr.aria-label]="i18n.t('home.portraitAria')">
-    <img src="vc-profile.png" alt="" aria-hidden="true" />
-  </article>
-  <a
-    class="resume-card"
-    [href]="resumePdfUrl"
-    target="_blank"
-    rel="noopener noreferrer"
-    [attr.aria-label]="i18n.t('home.resumeAria')"
-  >
+  <div class="grid-row grid-row-content">
+    <vc-home-latest-projects-card
+      class="latest-projects"
+      [projects]="latestProjects()">
+    </vc-home-latest-projects-card>
+    <vc-home-latest-posts-card
+      class="latest-posts"
+      [posts]="latestPosts()">
+    </vc-home-latest-posts-card>
+  </div>
 
-    <h2>{{ i18n.t('home.resumeTitle') }}</h2>
-    <p>{{ i18n.t('home.resumeText') }}</p>
-    <span class="resume-cta">
-      {{ i18n.t('home.resumeCta') }}
-      <span aria-hidden="true">-></span>
-    </span>
-  </a>
+  <div class="grid-row grid-row-final">
+    <vc-home-experience-card
+      class="experience"
+      [experience]="experience">
+    </vc-home-experience-card>
 
-  <article class="skills-card" [attr.aria-label]="i18n.t('home.skillsAria')">
-    <h2>{{ i18n.t('home.skillsTitle') }}</h2>
+    <div class="utility-panel">
+      <vc-home-stack-card
+        class="stack"
+        [stack]="stack">
+      </vc-home-stack-card>
 
-    <div class="skills-list">
-      @for (skill of skills; track skill.name) {
-        <div class="skill-row" [style.--skill-color]="skill.color">
-          <div class="skill-heading">
-            <span class="skill-name">
-              <ng-icon [name]="skill.icon" size="18px" strokeWidth="2" aria-hidden="true" />
-              {{ skill.name }}
-            </span>
-            <span class="skill-value">{{ skill.level }}%</span>
-          </div>
-
-          <div
-            class="skill-track"
-            role="progressbar"
-            [attr.aria-label]="skill.name"
-            [attr.aria-valuenow]="skill.level"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <span class="skill-fill" [style.width.%]="skill.level"></span>
-          </div>
-        </div>
-      }
-    </div>
-  </article>
-
-  <article class="experience-card" [attr.aria-label]="i18n.t('home.experienceAria')">
-    <p class="label">
-      <span aria-hidden="true"></span>
-      {{ i18n.t('home.experienceLabel') }}
-    </p>
-
-    <h2>{{ i18n.t('home.experienceTitle') }}</h2>
-
-    <div class="experience-list">
-      @for (item of experience; track item.roleKey) {
-        <div class="experience-row">
-          <div>
-            <strong>{{ i18n.t(item.roleKey) }}</strong>
-            <span>{{ i18n.t(item.companyKey) }}</span>
-          </div>
-          <time>{{ i18n.t(item.periodKey) }}</time>
-        </div>
-      }
-    </div>
-  </article>
-
-  <article class="social-card" [attr.aria-label]="i18n.t('home.socialAria')">
-    <span aria-hidden="true">in</span>
-  </article>
-
-  <article class="stack-card" [attr.aria-label]="i18n.t('home.stackAria')">
-    <p class="label">
-      <span aria-hidden="true"></span>
-      {{ i18n.t('home.stackLabel') }}
-    </p>
-    <h2>{{ i18n.t('home.stackTitle') }}</h2>
-
-    <div class="stack-marquee" aria-hidden="true">
-      <div class="stack-list">
-        @for (repeat of stackLoop; track repeat) {
-          <div class="stack-sequence">
-            @for (tool of stack; track $index) {
-              <span>{{ tool }}</span>
-            }
-          </div>
-        }
+      <div class="utility-links">
+        <vc-home-social-card
+          class="social"
+          [linkedinUrl]="linkedinUrl">
+        </vc-home-social-card>
+        <vc-home-whatsapp-card
+          class="whatsapp"
+          [whatsappUrl]="whatsappUrl">
+        </vc-home-whatsapp-card>
+        <vc-home-meeting-card
+          class="meeting"
+          [meetingUrl]="meetingUrl">
+        </vc-home-meeting-card>
       </div>
     </div>
-  </article>
-  
+  </div>
 </section>

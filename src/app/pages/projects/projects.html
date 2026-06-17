@@ -1,0 +1,20 @@
+<section class="projects-page">
+  <header class="projects-header">
+    <p class="projects-kicker">{{ i18n.t('projects.kicker') }}</p>
+    <h1>{{ i18n.t('projects.title') }}</h1>
+    <p class="projects-description">
+      {{ i18n.t('projects.description') }}
+    </p>
+  </header>
+
+  <vc-project-gallery [projects]="paginatedProjects()" />
+
+  <vc-pagination-controls
+    [ariaLabel]="i18n.t('projects.paginationAria')"
+    [currentPage]="currentPage()"
+    [totalPages]="totalPages()"
+    [totalItems]="projects.length"
+    (previous)="previousPage()"
+    (next)="nextPage()"
+  />
+</section>

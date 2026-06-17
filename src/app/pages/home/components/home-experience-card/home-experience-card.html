@@ -1,0 +1,20 @@
+<article class="experience-card" [attr.aria-label]="i18n.t('home.experienceAria')">
+  <p class="label">
+    <span aria-hidden="true"></span>
+    {{ i18n.t('home.experienceLabel') }}
+  </p>
+
+  <h2>{{ i18n.t('home.experienceTitle') }}</h2>
+
+  <div class="experience-list">
+    @for (item of experience; track item.roleKey) {
+      <div class="experience-row">
+        <div>
+          <strong>{{ i18n.t(item.roleKey) }}</strong>
+          <span>{{ i18n.t(item.companyKey) }}</span>
+        </div>
+        <time>{{ i18n.t(item.periodKey) }}</time>
+      </div>
+    }
+  </div>
+</article>

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { ShellComponent } from './components/shell/shell';
 import { Home } from './pages/home/home';
-import { ContactComponent } from './pages/contact/contact';
-import { CvComponent } from './pages/cv/cv';
 import { ProjectsComponent } from './pages/projects/projects';
+import { BlogComponent } from './pages/blog/blog';
+import { BlogPostDetailComponent } from './pages/blog/post-detail/blog-post-detail';
 
 export const routes: Routes = [
   {
@@ -17,14 +17,14 @@ export const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent
+      },     
+      {
+        path: 'blog',
+        component: BlogComponent
       },
       {
-        path: 'cv',
-        component: CvComponent
-      },
-      {
-        path: 'contact',
-        component: ContactComponent
+        path: 'blog/:slug',
+        component: BlogPostDetailComponent
       }
     ]
   },

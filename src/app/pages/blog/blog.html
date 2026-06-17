@@ -1,0 +1,20 @@
+<section class="blog-page">
+  <header class="blog-header">
+    <p class="blog-kicker">{{ i18n.t('blog.kicker') }}</p>
+    <h1>{{ i18n.t('blog.title') }}</h1>
+    <p class="blog-description">
+      {{ i18n.t('blog.description') }}
+    </p>
+  </header>
+
+  <vc-post-list [posts]="paginatedPosts()" />
+
+  <vc-pagination-controls
+    [ariaLabel]="i18n.t('blog.paginationAria')"
+    [currentPage]="currentPage()"
+    [totalPages]="totalPages()"
+    [totalItems]="posts().length"
+    (previous)="previousPage()"
+    (next)="nextPage()"
+  />
+</section>

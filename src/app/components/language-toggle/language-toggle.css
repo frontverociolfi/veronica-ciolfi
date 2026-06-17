@@ -47,7 +47,21 @@
   overflow: hidden;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 425px) {
+  .language-toggle {
+    gap: 4px;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  .language-button {
+    width: 32px;
+    height: 30px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 320px) {
   :host,
   .language-toggle {
     width: 100%;

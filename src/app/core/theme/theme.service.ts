@@ -42,6 +42,8 @@ export class ThemeService {
       return storedMode;
     }
 
-    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const prefersLight = window.matchMedia?.('(prefers-color-scheme: light)')?.matches ?? false;
+
+    return prefersLight ? 'light' : 'dark';
   }
 }
