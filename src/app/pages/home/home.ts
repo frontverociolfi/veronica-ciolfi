@@ -120,8 +120,6 @@ export class Home {
       icon: 'remixFunctionAddFill',
       color: 'var(--color-skill-bar)',
     },
-  ];
-  readonly skills2: ReadonlyArray<HomeSkillItem> = [
     {
       name: 'ReactJS',
       level: 82,

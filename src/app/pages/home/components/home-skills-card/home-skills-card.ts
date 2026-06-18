@@ -52,8 +52,7 @@ type AnimatedSkill = { key: string; level: number; delayIndex: number };
   styleUrl: './home-skills-card.css',
 })
 export class HomeSkillsCardComponent implements AfterViewInit, OnChanges, OnDestroy {
-  @Input() skillsLeft: ReadonlyArray<HomeSkillItem> = [];
-  @Input() skillsRight: ReadonlyArray<HomeSkillItem> = [];
+  @Input() skills: ReadonlyArray<HomeSkillItem> = [];
 
   private readonly platformId = inject(PLATFORM_ID);
   private readonly animatedLevels = signal<Record<string, number>>({});
@@ -69,7 +68,7 @@ export class HomeSkillsCardComponent implements AfterViewInit, OnChanges, OnDest
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ((changes['skillsLeft'] || changes['skillsRight']) && this.viewReady) {
+    if (changes['skills'] && this.viewReady) {
       this.startSkillAnimation();
     }
   }
@@ -78,12 +77,20 @@ export class HomeSkillsCardComponent implements AfterViewInit, OnChanges, OnDest
     this.cancelAnimation();
   }
 
+  leftColumn(): ReadonlyArray<HomeSkillItem> {
+    return this.skills.slice(0, this.columnBreakpoint());
+  }
+
+  rightColumn(): ReadonlyArray<HomeSkillItem> {
+    return this.skills.slice(this.columnBreakpoint());
+  }
+
   skillKey(column: SkillColumn, index: number, skill: HomeSkillItem): string {
     return `${column}-${index}-${skill.name}`;
   }
 
   skillDelayIndex(column: SkillColumn, index: number): number {
-    return column === 'left' ? index : this.skillsLeft.length + index;
+    return column === 'left' ? index : this.leftColumn().length + index;
   }
 
   displayedSkillLevel(key: string, fallback: number): number {
@@ -135,19 +142,23 @@ export class HomeSkillsCardComponent implements AfterViewInit, OnChanges, OnDest
   }
 
   private getAnimatedSkills(): ReadonlyArray<AnimatedSkill> {
-    const left = this.skillsLeft.map((skill, index) => ({
+    const left = this.leftColumn().map((skill, index) => ({
       key: this.skillKey('left', index, skill),
       level: skill.level,
       delayIndex: this.skillDelayIndex('left', index),
     }));
 
-    const right = this.skillsRight.map((skill, index) => ({
+    const right = this.rightColumn().map((skill, index) => ({
       key: this.skillKey('right', index, skill),
       level: skill.level,
       delayIndex: this.skillDelayIndex('right', index),
     }));
 
     return [...left, ...right];
+  }
+
+  private columnBreakpoint(): number {
+    return Math.ceil(this.skills.length / 2);
   }
 
   private prefersReducedMotion(): boolean {

@@ -3,7 +3,7 @@
 
   <div class="skill-container">
     <div class="skills-list">
-      @for (skill of skillsLeft; track skill.name; let index = $index) {
+      @for (skill of leftColumn(); track skill.name; let index = $index) {
       <div class="skill-row" [style.--skill-color]="skill.color" [style.--skill-index]="skillDelayIndex('left', index)">
         <div class="skill-heading">
           <span class="skill-name">
@@ -21,7 +21,7 @@
       }
     </div>
     <div class="skills-list">
-      @for (skill of skillsRight; track skill.name; let index = $index) {
+      @for (skill of rightColumn(); track skill.name; let index = $index) {
       <div class="skill-row" [style.--skill-color]="skill.color" [style.--skill-index]="skillDelayIndex('right', index)">
         <div class="skill-heading">
           <span class="skill-name">
