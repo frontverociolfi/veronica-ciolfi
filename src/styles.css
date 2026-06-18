@@ -6,6 +6,11 @@
   --color-base-100: color-mix(in srgb, var(--color-base-0) 84%, var(--color-base-900));
   --color-accent-400: #8ecae6;
   --color-accent-700: #219ebc;
+  --color-skill-bar: #219ebc;
+  --color-skill-bar-start: #8ecae6;
+  --color-skill-bar-end: #219ebc;
+  --color-skill-track: color-mix(in srgb, var(--color-base-100) 14%, transparent);
+  --color-skill-value-text: var(--color-base-900);
 
   --color-page: var(--color-base-900);
   --color-surface: color-mix(in srgb, var(--color-base-900) 92%, var(--color-base-0));
@@ -21,6 +26,11 @@
 }
 
 html[data-theme="light"] {
+  --color-skill-bar: #176f86;
+  --color-skill-bar-start: #219ebc;
+  --color-skill-bar-end: #176f86;
+  --color-skill-track: color-mix(in srgb, var(--color-base-900) 18%, var(--color-base-0));
+  --color-skill-value-text: var(--color-accent-400);
   --color-page: color-mix(in srgb, var(--color-base-0) 98%, var(--color-base-900));
   --color-surface: color-mix(in srgb, var(--color-base-0) 93%, var(--color-base-900));
   --color-surface-deep: color-mix(in srgb, var(--color-base-0) 88%, var(--color-accent-400));

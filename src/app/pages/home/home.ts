@@ -1,25 +1,45 @@
 import { Component, computed } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
-import { HomeExperienceCardComponent, HomeExperienceItem } from './components/home-experience-card/home-experience-card';
+import {
+  HomeExperienceCardComponent,
+  HomeExperienceItem,
+} from './components/home-experience-card/home-experience-card';
 import { HomeHeroLogoTileComponent } from './components/home-logo-tile/home-logo-tile';
 import { HomeIntroCardComponent } from './components/home-intro-card/home-intro-card';
-import { HomeLatestPostsCardComponent, HomeLatestPostItem } from './components/home-latest-posts-card/home-latest-posts-card';
-import { HomeLatestProjectsCardComponent, HomeLatestProjectItem } from './components/home-latest-projects-card/home-latest-projects-card';
+import {
+  HomeLatestPostsCardComponent,
+  HomeLatestPostItem,
+} from './components/home-latest-posts-card/home-latest-posts-card';
+import {
+  HomeLatestProjectsCardComponent,
+  HomeLatestProjectItem,
+} from './components/home-latest-projects-card/home-latest-projects-card';
 import { HomeMeetingCardComponent } from './components/home-meeting-card/home-meeting-card';
 import { HomePortraitCardComponent } from './components/home-portrait-card/home-portrait-card';
 import { HomeResumeCardComponent } from './components/home-resume-card/home-resume-card';
-import { HomeSkillsCardComponent, HomeSkillItem } from './components/home-skills-card/home-skills-card';
+import {
+  HomeSkillsCardComponent,
+  HomeSkillItem,
+} from './components/home-skills-card/home-skills-card';
 import { HomeSocialCardComponent } from './components/home-social-card/home-social-card';
 import { HomeStackCardComponent } from './components/home-stack-card/home-stack-card';
 import { HomeWhatsappCardComponent } from './components/home-whatsapp-card/home-whatsapp-card';
 import blogPostsBase from '../blog/mocks/blog-posts.base.json';
 import blogPostsEnUs from '../blog/mocks/blog-posts.en-US.json';
 import blogPostsPtBr from '../blog/mocks/blog-posts.pt-BR.json';
-import { BlogPostBase, BlogPostTranslation, BlogPostTranslationsMap } from '../blog/models/blog-post';
+import {
+  BlogPostBase,
+  BlogPostTranslation,
+  BlogPostTranslationsMap,
+} from '../blog/models/blog-post';
 import projectsBase from '../projects/mocks/projects.base.json';
 import projectsEnUs from '../projects/mocks/projects.en-US.json';
 import projectsPtBr from '../projects/mocks/projects.pt-BR.json';
-import { ProjectCardBase, ProjectCardTranslation, ProjectCardTranslationsMap } from '../projects/models/project-card';
+import {
+  ProjectCardBase,
+  ProjectCardTranslation,
+  ProjectCardTranslationsMap,
+} from '../projects/models/project-card';
 
 const blogTranslationsByLocale: Record<'pt-BR' | 'en-US', BlogPostTranslationsMap> = {
   'pt-BR': blogPostsPtBr as BlogPostTranslationsMap,
@@ -48,7 +68,7 @@ const projectTranslationsByLocale: Record<'pt-BR' | 'en-US', ProjectCardTranslat
     HomeWhatsappCardComponent,
   ],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
 export class Home {
   readonly resumePdfUrl = '/cv-veronica-ciolfi.pdf';
@@ -79,26 +99,52 @@ export class Home {
     {
       name: 'Angular',
       level: 95,
-      icon: 'heroCodeBracket',
-      color: 'var(--color-accent-400)',
+      icon: 'remixAngularjsFill',
+      color: 'var(--color-skill-bar)',
     },
     {
       name: 'TypeScript',
       level: 90,
-      icon: 'heroCommandLine',
-      color: 'var(--color-accent-700)',
+      icon: 'heroCodeBracket',
+      color: 'var(--color-skill-bar)',
     },
     {
       name: 'Node.js',
       level: 82,
       icon: 'heroCpuChip',
-      color: 'var(--color-base-100)',
+      color: 'var(--color-skill-bar)',
     },
     {
-      name: 'Creative UI',
-      level: 88,
-      icon: 'heroRocketLaunch',
-      color: 'var(--color-accent-700)',
+      name: 'Foco em UI',
+      level: 94,
+      icon: 'remixFunctionAddFill',
+      color: 'var(--color-skill-bar)',
+    },
+  ];
+  readonly skills2: ReadonlyArray<HomeSkillItem> = [
+    {
+      name: 'ReactJS',
+      level: 82,
+      icon: 'remixReactjsFill',
+      color: 'var(--color-skill-bar)',
+    },
+    {
+      name: 'Java',
+      level: 59,
+      icon: 'remixJavaFill',
+      color: 'var(--color-skill-bar)',
+    },
+    {
+      name: 'Engenharia de Prompt',
+      level: 71,
+      icon: 'remixMessageAi3Line',
+      color: 'var(--color-skill-bar)',
+    },
+    {
+      name: 'Azure - CI/CD',
+      level: 61,
+      icon: 'remixCloudFill',
+      color: 'var(--color-skill-bar)',
     },
   ];
 
@@ -139,4 +185,3 @@ export class Home {
 
   constructor(readonly i18n: I18nService) {}
 }
-
