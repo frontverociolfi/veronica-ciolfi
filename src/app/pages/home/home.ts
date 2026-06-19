@@ -2,7 +2,6 @@ import { Component, computed } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import {
   HomeExperienceCardComponent,
-  HomeExperienceItem,
 } from './components/home-experience-card/home-experience-card';
 import { HomeHeroLogoTileComponent } from './components/home-logo-tile/home-logo-tile';
 import { HomeIntroCardComponent } from './components/home-intro-card/home-intro-card';
@@ -17,39 +16,33 @@ import {
 import { HomeMeetingCardComponent } from './components/home-meeting-card/home-meeting-card';
 import { HomePortraitCardComponent } from './components/home-portrait-card/home-portrait-card';
 import { HomeResumeCardComponent } from './components/home-resume-card/home-resume-card';
-import {
-  HomeSkillsCardComponent,
-  HomeSkillItem,
-} from './components/home-skills-card/home-skills-card';
+import { HomeSkillsCardComponent } from './components/home-skills-card/home-skills-card';
 import { HomeSocialCardComponent } from './components/home-social-card/home-social-card';
 import { HomeStackCardComponent } from './components/home-stack-card/home-stack-card';
 import { HomeWhatsappCardComponent } from './components/home-whatsapp-card/home-whatsapp-card';
-import blogPostsBase from '../blog/mocks/blog-posts.base.json';
-import blogPostsEnUs from '../blog/mocks/blog-posts.en-US.json';
-import blogPostsPtBr from '../blog/mocks/blog-posts.pt-BR.json';
 import {
-  BlogPostBase,
   BlogPostTranslation,
-  BlogPostTranslationsMap,
 } from '../blog/models/blog-post';
-import projectsBase from '../projects/mocks/projects.base.json';
-import projectsEnUs from '../projects/mocks/projects.en-US.json';
-import projectsPtBr from '../projects/mocks/projects.pt-BR.json';
 import {
-  ProjectCardBase,
   ProjectCardTranslation,
-  ProjectCardTranslationsMap,
 } from '../projects/models/project-card';
-
-const blogTranslationsByLocale: Record<'pt-BR' | 'en-US', BlogPostTranslationsMap> = {
-  'pt-BR': blogPostsPtBr as BlogPostTranslationsMap,
-  'en-US': blogPostsEnUs as BlogPostTranslationsMap,
-};
-
-const projectTranslationsByLocale: Record<'pt-BR' | 'en-US', ProjectCardTranslationsMap> = {
-  'pt-BR': projectsPtBr as ProjectCardTranslationsMap,
-  'en-US': projectsEnUs as ProjectCardTranslationsMap,
-};
+import {
+  HOME_BLOG_HREF,
+  HOME_BLOG_POSTS_BASE,
+  HOME_BLOG_TRANSLATIONS_BY_LOCALE,
+  HOME_EXPERIENCE,
+  HOME_LATEST_ITEMS_COUNT,
+  HOME_LINKEDIN_URL,
+  HOME_MEETING_GUEST_EMAIL,
+  HOME_PROJECTS_BASE,
+  HOME_PROJECTS_HREF,
+  HOME_PROJECT_TRANSLATIONS_BY_LOCALE,
+  HOME_RESUME_PDF_URL,
+  HOME_SKILLS,
+  HOME_STACK,
+  HOME_TECHNOLOGIES_PREVIEW_COUNT,
+  HOME_WHATSAPP_URL,
+} from './home.constants';
 
 @Component({
   selector: 'vc-home',
@@ -71,11 +64,10 @@ const projectTranslationsByLocale: Record<'pt-BR' | 'en-US', ProjectCardTranslat
   styleUrl: './home.css',
 })
 export class Home {
-  readonly resumePdfUrl = '/cv-veronica-ciolfi.pdf';
-  readonly linkedinUrl = 'https://www.linkedin.com/in/veronica-ciolfi/';
-  readonly whatsappUrl =
-    'https://wa.me/5514991947676?text=Ol%C3%A1,%20vi%20seu%20perfil%20pessoal%20e%20fiquei%20interassado(a)%20nas%20suas%20qualifica%C3%A7%C3%B5es%20profissionais!%20Vamos%20conversar?';
-  readonly meetingGuestEmail = 'verociolfi@gmail.com';
+  readonly resumePdfUrl = HOME_RESUME_PDF_URL;
+  readonly linkedinUrl = HOME_LINKEDIN_URL;
+  readonly whatsappUrl = HOME_WHATSAPP_URL;
+  readonly meetingGuestEmail = HOME_MEETING_GUEST_EMAIL;
   readonly meetingUrl = computed(() =>
     this.buildGoogleCalendarEventUrl({
       title: this.i18n.t('home.meetingEventTitle'),
@@ -83,97 +75,30 @@ export class Home {
     })
   );
 
-  readonly experience: ReadonlyArray<HomeExperienceItem> = [
-    {
-      roleKey: 'home.experience.role1',
-      companyKey: 'home.experience.company1',
-      periodKey: 'home.experience.period1',
-    },
-    {
-      roleKey: 'home.experience.role2',
-      companyKey: 'home.experience.company2',
-      periodKey: 'home.experience.period2',
-    },
-    {
-      roleKey: 'home.experience.role3',
-      companyKey: 'home.experience.company3',
-      periodKey: 'home.experience.period3',
-    },
-  ];
-
-  readonly skills: ReadonlyArray<HomeSkillItem> = [
-    {
-      name: 'Angular',
-      level: 95,
-      icon: 'remixAngularjsFill',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'TypeScript',
-      level: 90,
-      icon: 'heroCodeBracket',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'Node.js',
-      level: 82,
-      icon: 'heroCpuChip',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'Foco em UI',
-      level: 94,
-      icon: 'remixFunctionAddFill',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'ReactJS',
-      level: 82,
-      icon: 'remixReactjsFill',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'Java',
-      level: 59,
-      icon: 'remixJavaFill',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'Engenharia de Prompt',
-      level: 71,
-      icon: 'remixMessageAi3Line',
-      color: 'var(--color-skill-bar)',
-    },
-    {
-      name: 'Azure - CI/CD',
-      level: 61,
-      icon: 'remixCloudFill',
-      color: 'var(--color-skill-bar)',
-    },
-  ];
-
-  readonly stack = ['Angular', 'TypeScript', 'RxJS', 'NgRX', 'SSR', 'Vitest', 'React.js', 'Java', 'Git', 'Spring Boot', 'Jest', 'SCSS / Sass', 'Tailwind', 'GitHub Actions', 'MySQL', 'SonarCloud', 'SonarQube', 'Next.js', 'Node.js', 'Docker', 'Cypress', 'GraphQL', 'Storybook'   ];
+  readonly experience = HOME_EXPERIENCE;
+  readonly skills = HOME_SKILLS;
+  readonly stack = HOME_STACK;
 
   readonly latestProjects = computed(() => {
-    const translations = projectTranslationsByLocale[this.i18n.locale()];
+    const translations = HOME_PROJECT_TRANSLATIONS_BY_LOCALE[this.i18n.locale()];
 
-    return (projectsBase as ReadonlyArray<ProjectCardBase>).slice(0, 2).map((project) => {
+    return HOME_PROJECTS_BASE.slice(0, HOME_LATEST_ITEMS_COUNT).map((project) => {
       const localized = translations[project.slug] as ProjectCardTranslation;
 
       return {
         slug: project.slug,
         name: localized.name,
         summary: localized.summary,
-        technologies: project.technologies.slice(0, 3),
-        href: '/projects',
+        technologies: project.technologies.slice(0, HOME_TECHNOLOGIES_PREVIEW_COUNT),
+        href: HOME_PROJECTS_HREF,
       } satisfies HomeLatestProjectItem;
     });
   });
 
   readonly latestPosts = computed(() => {
-    const translations = blogTranslationsByLocale[this.i18n.locale()];
+    const translations = HOME_BLOG_TRANSLATIONS_BY_LOCALE[this.i18n.locale()];
 
-    return (blogPostsBase as ReadonlyArray<BlogPostBase>).slice(0, 2).map((post) => {
+    return HOME_BLOG_POSTS_BASE.slice(0, HOME_LATEST_ITEMS_COUNT).map((post) => {
       const localized = translations[post.slug] as BlogPostTranslation;
 
       return {
@@ -182,7 +107,7 @@ export class Home {
         excerpt: localized.excerpt,
         category: localized.category,
         publishedAt: post.publishedAt,
-        href: '/blog',
+        href: HOME_BLOG_HREF,
       } satisfies HomeLatestPostItem;
     });
   });
