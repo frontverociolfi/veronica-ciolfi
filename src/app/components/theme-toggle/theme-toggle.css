@@ -6,21 +6,33 @@
   display: inline-flex;
   height: 48px;
   align-items: center;
-  gap: 10px;
-  padding: 6px 12px 6px 6px;
+  justify-content: center;
+  padding: 0;
   border: 0;
   color: var(--color-text);
   background: transparent;
   cursor: pointer;
   font: inherit;
+  transition:
+    transform 180ms ease;
 }
 
 .theme-track {
   display: block;
-  width: 58px;
+  width: 64px;
   padding: 4px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-base-100) 30%, transparent);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-base-0) 10%, var(--color-base-900)),
+    color-mix(in srgb, var(--color-base-0) 22%, var(--color-base-900))
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-0) 14%, transparent),
+    0 10px 24px rgb(0 0 0 / 18%);
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .theme-thumb {
@@ -29,13 +41,40 @@
   height: 26px;
   place-items: center;
   border-radius: 50%;
-  color: var(--color-base-900);
-  background: var(--color-base-100);
-  transition: transform 180ms ease;
+  color: var(--color-base-0);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-accent-400) 88%, white),
+    var(--color-accent-strong)
+  );
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--color-accent-strong) 28%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 35%, transparent);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .theme-toggle.light .theme-thumb {
-  transform: translateX(24px);
+  transform: translateX(30px);
+  color: var(--color-base-900);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, white 92%, var(--color-base-0)),
+    color-mix(in srgb, var(--color-base-0) 88%, var(--color-accent-400))
+  );
+  box-shadow:
+    0 8px 18px rgb(1 22 39 / 12%),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-900) 10%, transparent);
+}
+
+.theme-toggle:hover .theme-track,
+.theme-toggle:focus-visible .theme-track {
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent-400) 18%, transparent),
+    0 12px 28px rgb(0 0 0 / 22%);
 }
 
 .theme-toggle:hover .theme-thumb,
@@ -45,12 +84,33 @@
 
 .theme-toggle.light:hover .theme-thumb,
 .theme-toggle.light:focus-visible .theme-thumb {
-  transform: translateX(24px) scale(1.08);
+  transform: translateX(30px) scale(1.08);
 }
 
 .theme-toggle:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-base-100) 32%, transparent);
+}
+
+:host-context(html[data-theme="light"]) .theme-toggle {
+  background: transparent;
+}
+
+:host-context(html[data-theme="light"]) .theme-track {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-base-900) 24%, white),
+    color-mix(in srgb, var(--color-accent-400) 28%, white)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-900) 14%, transparent),
+    0 10px 24px rgb(1 22 39 / 10%);
+}
+
+:host-context(html[data-theme="light"]) .theme-toggle:hover .theme-track,
+:host-context(html[data-theme="light"]) .theme-toggle:focus-visible .theme-track {
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent-strong) 22%, transparent),
+    0 12px 28px rgb(1 22 39 / 14%);
 }
 
 .theme-text {
@@ -64,11 +124,10 @@
 @media (max-width: 425px) {
   .theme-toggle {
     height: 40px;
-    padding: 4px;
   }
 
   .theme-track {
-    width: 48px;
+    width: 56px;
     padding: 3px;
   }
 
@@ -78,12 +137,12 @@
   }
 
   .theme-toggle.light .theme-thumb {
-    transform: translateX(20px);
+    transform: translateX(28px);
   }
 
   .theme-toggle.light:hover .theme-thumb,
   .theme-toggle.light:focus-visible .theme-thumb {
-    transform: translateX(20px) scale(1.08);
+    transform: translateX(28px) scale(1.08);
   }
 }
 
@@ -97,4 +156,3 @@
     justify-content: center;
   }
 }
-

@@ -28,8 +28,9 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  color: var(--color-base-900);
-  background: color-mix(in srgb, var(--color-base-100) 88%, white);
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 16%, var(--color-surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 28%, transparent);
   font-size: 0.72rem;
   font-weight: 850;
   line-height: 1;
@@ -71,6 +72,7 @@
   color: inherit;
   text-decoration: none;
   background: color-mix(in srgb, var(--color-base-0) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-base-100) 10%, transparent);
   transition: transform 180ms ease, background 180ms ease;
 }
 
@@ -105,5 +107,31 @@
   color: var(--color-text-muted);
   font-size: 0.82rem;
   line-height: 1.55;
+}
+
+:host-context(html[data-theme="light"]) .latest-card {
+  background:
+    radial-gradient(circle at 84% 16%, color-mix(in srgb, var(--color-accent-strong) 18%, transparent), transparent 10rem),
+    radial-gradient(circle at 20% 82%, color-mix(in srgb, var(--color-accent) 14%, white), transparent 9rem),
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--color-base-0) 88%, var(--color-accent) 12%),
+      color-mix(in srgb, var(--color-surface) 68%, var(--color-accent-strong) 32%)
+    );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-900) 10%, transparent),
+    0 20px 40px rgb(1 22 39 / 6%);
+}
+
+:host-context(html[data-theme="light"]) .item-card {
+  background: color-mix(in srgb, white 90%, var(--color-accent) 10%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-900) 10%, transparent),
+    0 10px 24px rgb(1 22 39 / 6%);
+}
+
+:host-context(html[data-theme="light"]) .item-card:hover,
+:host-context(html[data-theme="light"]) .item-card:focus-visible {
+  background: color-mix(in srgb, white 94%, var(--color-accent) 6%);
 }
 

@@ -75,7 +75,13 @@ export class Home {
   readonly linkedinUrl = 'https://www.linkedin.com/in/veronica-ciolfi/';
   readonly whatsappUrl =
     'https://wa.me/5514991947676?text=Ol%C3%A1,%20vi%20seu%20perfil%20pessoal%20e%20fiquei%20interassado(a)%20nas%20suas%20qualifica%C3%A7%C3%B5es%20profissionais!%20Vamos%20conversar?';
-  readonly meetingUrl = 'https://calendar.google.com/calendar/u/0/r/eventedit';
+  readonly meetingGuestEmail = 'verociolfi@gmail.com';
+  readonly meetingUrl = computed(() =>
+    this.buildGoogleCalendarEventUrl({
+      title: this.i18n.t('home.meetingEventTitle'),
+      guestEmail: this.meetingGuestEmail,
+    })
+  );
 
   readonly experience: ReadonlyArray<HomeExperienceItem> = [
     {
@@ -146,7 +152,7 @@ export class Home {
     },
   ];
 
-  readonly stack = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'SSR', 'Vitest', 'CSS'];
+  readonly stack = ['Angular', 'TypeScript', 'RxJS', 'NgRX', 'SSR', 'Vitest', 'React.js', 'Java', 'Git', 'Spring Boot', 'Jest', 'SCSS / Sass', 'Tailwind', 'GitHub Actions', 'MySQL', 'SonarCloud', 'SonarQube', 'Next.js', 'Node.js', 'Docker', 'Cypress', 'GraphQL', 'Storybook'   ];
 
   readonly latestProjects = computed(() => {
     const translations = projectTranslationsByLocale[this.i18n.locale()];
@@ -182,4 +188,22 @@ export class Home {
   });
 
   constructor(readonly i18n: I18nService) {}
+
+  private buildGoogleCalendarEventUrl(options: { title: string; guestEmail: string }): string {
+    const query = new URLSearchParams();
+
+    if (options.title.trim()) {
+      query.set('text', options.title.trim());
+    }
+
+    if (options.guestEmail.trim()) {
+      query.set('add', options.guestEmail.trim());
+    }
+
+    const queryString = query.toString();
+
+    return queryString
+      ? `https://calendar.google.com/calendar/u/0/r/eventedit?${queryString}`
+      : 'https://calendar.google.com/calendar/u/0/r/eventedit';
+  }
 }

@@ -49,6 +49,7 @@ export type TranslationKey =
   | 'home.latestPostsTitle'
   | 'home.latestPostsCta'
   | 'home.meetingAria'
+  | 'home.meetingEventTitle'
   | 'home.meetingLabel'
   | 'home.meetingTitle'
   | 'home.meetingText'
@@ -134,26 +135,27 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'home.logoAria': 'Monograma Veronica Ciolfi',
     'home.aboutLabel': 'Sobre mim',
     'home.aboutText':
-      'Eu crio experiencias digitais cuidadosas para marcas ambiciosas, combinando interfaces limpas, visuais expressivos e narrativa focada.',
+      'Sou desenvolvedora frontend em São Paulo, Brasil, com 8 anos de experiência transformando ideias em experiências digitais elegantes e funcionais. Adoro construir interfaces intuitivas, explorar detalhes de design e criar produtos que pareçam tão bons quanto funcionam. Fora do código, escrevo ficção científica e acredito que toda boa experiência começa com uma boa história.',
     'home.portraitAria': 'Ilustracao de retrato criativo',
     'home.skillsAria': 'Resumo de habilidades tecnicas',
     'home.skillsTitle': 'Habilidades Técnicas',
     'home.experienceAria': 'Resumo de experiencia profissional',
-    'home.experienceLabel': 'Experiencia',
+    'home.experienceLabel': 'Experiência',
     'home.experienceTitle': 'Dez anos criando e entregando software.',
-    'home.experience.role1': 'Engenheira de software',
-    'home.experience.company1': 'Produtos digitais e sistemas web',
+    'home.experience.role1': 'Engenheira de software sênior',
+    'home.experience.company1': 'Arquitetura frontend, qualidade e escalabilidade',
     'home.experience.period1': '2025 - Agora',
-    'home.experience.role2': 'Desenvolvedora web senior',
-    'home.experience.company2': 'Interfaces, acessibilidade e frontend',
+    'home.experience.role2': 'Desenvolvedora frontend sênior',
+    'home.experience.company2': 'Angular, React, acessibilidade e design systems',
     'home.experience.period2': '2023 - 2025',
     'home.experience.role3': 'Desenvolvedora full stack',
-    'home.experience.company3': 'APIs, dashboards e experiencias responsivas',
+    'home.experience.company3': 'APIs, integrações financeiras e experiência do usuário',
     'home.experience.period3': '2018 - 2023',
     'home.resumeAria': 'Abrir curriculo completo em PDF',
     'home.resumeLabel': 'Curriculo',
-    'home.resumeTitle': 'Curriculo completo em PDF.',
-    'home.resumeText': 'Abra uma versao completa com trajetoria, projetos e experiencias em detalhes.',
+    'home.resumeTitle': 'Currículo completo em PDF',
+    'home.resumeText':
+      'Uma visão detalhada da minha experiência, projetos e evolução profissional.',
     'home.resumeCta': 'Abrir PDF',
     'home.socialAria': 'Perfil profissional no LinkedIn',
     'home.whatsappAria': 'Conversar no WhatsApp',
@@ -166,13 +168,14 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'home.latestPostsTitle': 'Ultimos posts.',
     'home.latestPostsCta': 'Abrir blog',
     'home.meetingAria': 'Agendar call no Google Meet',
+    'home.meetingEventTitle': 'Call com Veronica Ciolfi',
     'home.meetingLabel': 'Meet',
     'home.meetingTitle': 'Agende uma call.',
-    'home.meetingText': 'Abra um atalho rapido para organizar uma conversa por Google Meet.',
+    'home.meetingText': 'Vamos fazer uma call rapidinho?',
     'home.meetingCta': 'Agendar',
     'home.stackAria': 'Ferramentas e stack principal',
     'home.stackLabel': 'Stack',
-    'home.stackTitle': 'Ferramentas que eu busco primeiro.',
+    'home.stackTitle': 'Stacks que eu uso sempre.',
     'pagination.previous': 'Anterior',
     'pagination.next': 'Proxima',
     'pagination.page': 'Pagina',
@@ -180,7 +183,8 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'pagination.items': 'itens',
     'blog.kicker': 'Blog',
     'blog.title': 'Notas sobre frontend, sistemas e tecnologia criativa.',
-    'blog.description': 'Uma listagem leve de posts alimentada por JSON mockado para poder evoluir depois para um fluxo real de conteudo.',
+    'blog.description':
+      'Uma listagem leve de posts alimentada por JSON mockado para poder evoluir depois para um fluxo real de conteudo.',
     'blog.listAria': 'Lista de posts do blog',
     'blog.readPost': 'Ler post',
     'blog.backToBlog': 'Voltar para o blog',
@@ -188,11 +192,14 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'blog.copyCode': 'Copiar codigo',
     'blog.copiedCode': 'Copiado',
     'blog.notFound': 'Post nao encontrado.',
-    'blog.notFoundText': 'Esse artigo nao existe ou ainda nao foi publicado nessa versao do portfolio.',
+    'blog.notFoundText':
+      'Esse artigo nao existe ou ainda nao foi publicado nessa versao do portfolio.',
     'blog.paginationAria': 'Paginacao do blog',
     'projects.kicker': 'Projetos',
-    'projects.title': 'Projetos selecionados entre sistemas frontend, superficies de produto e experimentos criativos.',
-    'projects.description': 'Uma galeria simples de cards de projeto com conteudo mockado, pronta para ser substituida por estudos de caso reais depois.',
+    'projects.title':
+      'Projetos selecionados entre sistemas frontend, superficies de produto e experimentos criativos.',
+    'projects.description':
+      'Uma galeria simples de cards de projeto com conteudo mockado, pronta para ser substituida por estudos de caso reais depois.',
     'projects.galleryAria': 'Galeria de projetos',
     'projects.visitProject': 'Visitar projeto',
     'projects.paginationAria': 'Paginacao de projetos',
@@ -209,12 +216,18 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'cv.timeline1.company': 'PDTec (B3)',
     'cv.timeline1.description':
       'Meu primeiro desafio foi na PDTec, empresa do ecossistema B3, onde trabalhei no desenvolvimento de um sistema voltado a padronizacao e otimizacao do gerenciamento de documentos virtuais. Atuei do inicio ao fim do projeto, com participacao ativa em todas as etapas:',
-    'cv.timeline1.point1': 'Envolvimento direto nas fases de concepcao, modelagem e definicao arquitetural;',
-    'cv.timeline1.point2': 'Configuracao e manutencao dos ambientes de desenvolvimento, qualidade e producao na Azure;',
-    'cv.timeline1.point3': 'Diagnostico e solucao de problemas em pipelines, alem da criacao de fluxos automatizados de CI/CD;',
-    'cv.timeline1.point4': 'Desenvolvimento completo do frontend com Angular 16, criando o produto do zero;',
-    'cv.timeline1.point5': 'Implementacao e manutencao de uma base solida de testes, garantindo cobertura minima de 90%;',
-    'cv.timeline1.point6': 'Definicao de padroes de codigo, estruturacao da arquitetura frontend e desenvolvimento de funcionalidades exclusivas, aplicando Clean Architecture, Clean Code e SOLID.',
+    'cv.timeline1.point1':
+      'Envolvimento direto nas fases de concepcao, modelagem e definicao arquitetural;',
+    'cv.timeline1.point2':
+      'Configuracao e manutencao dos ambientes de desenvolvimento, qualidade e producao na Azure;',
+    'cv.timeline1.point3':
+      'Diagnostico e solucao de problemas em pipelines, alem da criacao de fluxos automatizados de CI/CD;',
+    'cv.timeline1.point4':
+      'Desenvolvimento completo do frontend com Angular 16, criando o produto do zero;',
+    'cv.timeline1.point5':
+      'Implementacao e manutencao de uma base solida de testes, garantindo cobertura minima de 90%;',
+    'cv.timeline1.point6':
+      'Definicao de padroes de codigo, estruturacao da arquitetura frontend e desenvolvimento de funcionalidades exclusivas, aplicando Clean Architecture, Clean Code e SOLID.',
     'cv.timeline2.period': '07/2022 - 11/2023',
     'cv.timeline2.location': 'Remoto',
     'cv.timeline2.employer': 'Pontomais (atual VR Gente) - Programadora Front-End Angular',
@@ -223,11 +236,16 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'cv.timeline2.company': 'Pontomais (atual VR Gente)',
     'cv.timeline2.description':
       'Fiz parte da equipe responsável pelo Onboarding e User Tour de um produto voltado a otimizar processos de Recursos Humanos, incluindo registro de ponto, geração de relatórios e gestão de folha de pagamento. A solução é distribuída nas plataformas web, iOS e Android, garantindo acessibilidade e escalabilidade para diferentes tipos de empresas.',
-    'cv.timeline2.point1': 'Desenvolvimento dos componentes da versão Web (SaaS), criando interfaces intuitivas e eficientes;',
-    'cv.timeline2.point2': 'Implementação do Wizard e do Tour de primeiros passos para orientar novos usuários;',
-    'cv.timeline2.point3': 'Atuação com Angular 8, React Native, HTML5, Sass, Bootstrap e Typescript;',
-    'cv.timeline2.point4': 'Papel importante como Code Reviewer, garantindo padronização, qualidade e sustentabilidade do código;',
-    'cv.timeline2.point5': 'Mentoria de outros desenvolvedores, apoiando a evolução técnica da equipe;',
+    'cv.timeline2.point1':
+      'Desenvolvimento dos componentes da versão Web (SaaS), criando interfaces intuitivas e eficientes;',
+    'cv.timeline2.point2':
+      'Implementação do Wizard e do Tour de primeiros passos para orientar novos usuários;',
+    'cv.timeline2.point3':
+      'Atuação com Angular 8, React Native, HTML5, Sass, Bootstrap e Typescript;',
+    'cv.timeline2.point4':
+      'Papel importante como Code Reviewer, garantindo padronização, qualidade e sustentabilidade do código;',
+    'cv.timeline2.point5':
+      'Mentoria de outros desenvolvedores, apoiando a evolução técnica da equipe;',
     'cv.timeline3.period': '11/2021 - 07/2022',
     'cv.timeline3.location': 'São Paulo - SP',
     'cv.timeline3.employer': '77Seg, Programadora Mobile (React Native)',
@@ -253,26 +271,26 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'home.logoAria': 'Veronica Ciolfi monogram',
     'home.aboutLabel': 'About me',
     'home.aboutText':
-      'I create thoughtful digital experiences for ambitious brands, blending clean interfaces, expressive visuals, and focused storytelling.',
+      "Based in São Paulo, Brazil, I have spent the last 8 years designing and building digital experiences where technology, design, and storytelling meet. I'm passionate about frontend development, thoughtful user experiences, and the small details that make products feel alive. Outside of work, I write science fiction and publish stories for fun.",
     'home.portraitAria': 'Creative portrait illustration',
     'home.skillsAria': 'Technical skills summary',
     'home.skillsTitle': 'Technical Skills',
     'home.experienceAria': 'Professional experience summary',
     'home.experienceLabel': 'Experience',
-    'home.experienceTitle': 'Ten years of building and shipping software.',
-    'home.experience.role1': 'Software engineer',
-    'home.experience.company1': 'Digital products and web systems',
+    'home.experienceTitle': 'Ten years building products that people use.',
+    'home.experience.role1': 'Senior Software Engineer',
+    'home.experience.company1': 'Scalable systems, technical leadership and product development',
     'home.experience.period1': '2025 - Now',
-    'home.experience.role2': 'Senior web developer',
-    'home.experience.company2': 'Interfaces, accessibility, and frontend',
+    'home.experience.role2': 'Senior Frontend Engineer',
+    'home.experience.company2': 'Angular, React and scalable user interfaces',
     'home.experience.period2': '2023 - 2025',
-    'home.experience.role3': 'Full stack developer',
-    'home.experience.company3': 'APIs, dashboards, and responsive experiences',
+    'home.experience.role3': 'Full Stack Developer',
+    'home.experience.company3': 'Web applications, APIs and backend services',
     'home.experience.period3': '2018 - 2023',
     'home.resumeAria': 'Open the full resume PDF',
     'home.resumeLabel': 'Resume',
-    'home.resumeTitle': 'Full resume in PDF.',
-    'home.resumeText': 'Open the complete version with background, projects, and experience in detail.',
+    "home.resumeTitle": "Full Resume (PDF)",
+"home.resumeText": "A detailed overview of my experience, projects, and professional growth.",
     'home.resumeCta': 'Open PDF',
     'home.socialAria': 'Professional LinkedIn profile',
     'home.whatsappAria': 'Start a conversation on WhatsApp',
@@ -285,13 +303,14 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'home.latestPostsTitle': 'Latest posts.',
     'home.latestPostsCta': 'Open blog',
     'home.meetingAria': 'Schedule a Google Meet call',
+    'home.meetingEventTitle': 'Call with Veronica Ciolfi',
     'home.meetingLabel': 'Meet',
     'home.meetingTitle': 'Schedule a call.',
-    'home.meetingText': 'Open a quick shortcut to organize a conversation on Google Meet.',
+    'home.meetingText': 'How about a 30 min call with me?',
     'home.meetingCta': 'Schedule',
     'home.stackAria': 'Main tools and stack',
     'home.stackLabel': 'Stack',
-    'home.stackTitle': 'Tools I reach for first.',
+    'home.stackTitle': 'Tools I always reach for.',
     'pagination.previous': 'Previous',
     'pagination.next': 'Next',
     'pagination.page': 'Page',
@@ -299,7 +318,8 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'pagination.items': 'items',
     'blog.kicker': 'Blog',
     'blog.title': 'Notes on frontend, systems, and creative technology.',
-    'blog.description': 'A lightweight post index fed by mocked JSON so the page can grow into a real content flow later.',
+    'blog.description':
+      'A lightweight post index fed by mocked JSON so the page can grow into a real content flow later.',
     'blog.listAria': 'Blog posts list',
     'blog.readPost': 'Read post',
     'blog.backToBlog': 'Back to blog',
@@ -307,11 +327,14 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'blog.copyCode': 'Copy code',
     'blog.copiedCode': 'Copied',
     'blog.notFound': 'Post not found.',
-    'blog.notFoundText': 'This article does not exist or has not been published in this portfolio version yet.',
+    'blog.notFoundText':
+      'This article does not exist or has not been published in this portfolio version yet.',
     'blog.paginationAria': 'Blog pagination',
     'projects.kicker': 'Projects',
-    'projects.title': 'Selected builds across frontend systems, product surfaces, and creative experiments.',
-    'projects.description': 'A simple gallery of project cards with mocked content, ready to be replaced by real case studies later.',
+    'projects.title':
+      'Selected builds across frontend systems, product surfaces, and creative experiments.',
+    'projects.description':
+      'A simple gallery of project cards with mocked content, ready to be replaced by real case studies later.',
     'projects.galleryAria': 'Project gallery',
     'projects.visitProject': 'Visit project',
     'projects.paginationAria': 'Projects pagination',
@@ -328,12 +351,17 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'cv.timeline1.company': 'PDTec (B3)',
     'cv.timeline1.description':
       'My first challenge was at PDTec, part of the B3 ecosystem, where I worked on a system focused on standardizing and streamlining virtual document management. I participated from start to finish, actively involved in every stage:',
-    'cv.timeline1.point1': 'Direct involvement in conception, modeling, and architectural definition;',
-    'cv.timeline1.point2': 'Setup and maintenance of development, quality, and production environments on Azure;',
+    'cv.timeline1.point1':
+      'Direct involvement in conception, modeling, and architectural definition;',
+    'cv.timeline1.point2':
+      'Setup and maintenance of development, quality, and production environments on Azure;',
     'cv.timeline1.point3': 'Troubleshooting pipelines and creating automated CI/CD flows;',
-    'cv.timeline1.point4': 'End-to-end frontend development with Angular 16, building the product from scratch;',
-    'cv.timeline1.point5': 'Implementation and maintenance of a solid test base, ensuring a minimum 90% coverage;',
-    'cv.timeline1.point6': 'Definition of coding standards, frontend architecture structuring, and development of exclusive features, applying Clean Architecture, Clean Code, and SOLID.',
+    'cv.timeline1.point4':
+      'End-to-end frontend development with Angular 16, building the product from scratch;',
+    'cv.timeline1.point5':
+      'Implementation and maintenance of a solid test base, ensuring a minimum 90% coverage;',
+    'cv.timeline1.point6':
+      'Definition of coding standards, frontend architecture structuring, and development of exclusive features, applying Clean Architecture, Clean Code, and SOLID.',
     'cv.timeline2.period': '07/2022 - 11/2023',
     'cv.timeline2.location': 'Remote',
     'cv.timeline2.employer': 'Pontomais (now VR Gente) - Frontend Angular Developer',
@@ -342,11 +370,16 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'cv.timeline2.company': 'Pontomais (now VR Gente)',
     'cv.timeline2.description':
       'I was part of the team responsible for Onboarding and User Tour for a product designed to streamline Human Resources processes, including time tracking, report generation, and payroll management. The solution is delivered across web, iOS, and Android, ensuring accessibility and scalability for different types of companies.',
-    'cv.timeline2.point1': 'Development of Web (SaaS) components, creating intuitive and efficient interfaces;',
-    'cv.timeline2.point2': 'Implementation of the Wizard and the first steps tour to guide new users;',
-    'cv.timeline2.point3': 'Work with Angular 8, React Native, HTML5, Sass, Bootstrap, and TypeScript;',
-    'cv.timeline2.point4': 'Important role as Code Reviewer, ensuring code standardization, quality, and sustainability;',
-    'cv.timeline2.point5': 'Mentoring other developers, supporting the technical growth of the team;',
+    'cv.timeline2.point1':
+      'Development of Web (SaaS) components, creating intuitive and efficient interfaces;',
+    'cv.timeline2.point2':
+      'Implementation of the Wizard and the first steps tour to guide new users;',
+    'cv.timeline2.point3':
+      'Work with Angular 8, React Native, HTML5, Sass, Bootstrap, and TypeScript;',
+    'cv.timeline2.point4':
+      'Important role as Code Reviewer, ensuring code standardization, quality, and sustainability;',
+    'cv.timeline2.point5':
+      'Mentoring other developers, supporting the technical growth of the team;',
     'cv.timeline3.period': '11/2021 - 07/2022',
     'cv.timeline3.location': 'Sao Paulo - SP',
     'cv.timeline3.employer': '77Seg, Mobile Developer (React Native)',

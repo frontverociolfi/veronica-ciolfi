@@ -10,11 +10,20 @@ describe('HomeMeetingCardComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeMeetingCardComponent);
-    fixture.componentInstance.meetingUrl = 'https://calendar.google.com/calendar/u/0/r/eventedit';
+    fixture.componentInstance.meetingUrl =
+      'https://calendar.google.com/calendar/u/0/r/eventedit?text=Call+with+Veronica+Ciolfi&add=veronica%40example.com';
     fixture.detectChanges();
   });
 
   it('renders the meeting cta', () => {
-    expect(fixture.nativeElement.textContent).toContain('Meet');
+    expect(fixture.nativeElement.textContent).toContain('Agendar');
+  });
+
+  it('uses the full card as an external link with prefilled event data', () => {
+    const link: HTMLAnchorElement | null = fixture.nativeElement.querySelector('a');
+
+    expect(link?.getAttribute('href')).toContain('eventedit?text=Call+with+Veronica+Ciolfi');
+    expect(link?.getAttribute('href')).toContain('add=veronica%40example.com');
+    expect(link?.getAttribute('target')).toBe('_blank');
   });
 });

@@ -54,21 +54,23 @@
 .meeting-card p {
   margin-bottom: 16px;
   color: color-mix(in srgb, var(--color-base-0) 82%, var(--color-base-100));
-  font-size: 0.76rem;
-  line-height: 1.5;
+  font-size: 1.25rem;
 }
 
 .cta {
   display: inline-flex;
   align-self: flex-start;
-  padding: 8px 12px;
+  padding: 20px;
   border-radius: 999px;
   color: var(--color-base-900);
   background: color-mix(in srgb, var(--color-base-0) 84%, transparent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  transition: transform 0.3s ease;
 }
+
+.cta:hover {   
+  transform: rotate(20deg);
+}
+
 
 @media (max-width: 1000px) {
   .meeting-card {

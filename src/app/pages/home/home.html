@@ -4,8 +4,26 @@
     {{ i18n.t('home.eyebrow') }}
   </p>
 
-  <h1 id="intro-title">
-    Veronica <span>Ciolfi.</span>
+  <h1 id="intro-title" aria-label="Veronica Ciolfi.">
+    <span class="title-line title-line-primary" aria-hidden="true">
+      <span class="title-letter" style="--letter-delay: 220ms;">V</span>
+      <span class="title-letter" style="--letter-delay: 860ms;">e</span>
+      <span class="title-letter" style="--letter-delay: 480ms;">r</span>
+      <span class="title-letter" style="--letter-delay: 1240ms;">o</span>
+      <span class="title-letter" style="--letter-delay: 340ms;">n</span>
+      <span class="title-letter" style="--letter-delay: 1010ms;">i</span>
+      <span class="title-letter" style="--letter-delay: 670ms;">c</span>
+      <span class="title-letter" style="--letter-delay: 1480ms;">a</span>
+    </span>
+    <span class="title-line title-line-accent" aria-hidden="true">
+      <span class="title-letter" style="--letter-delay: 1880ms;">C</span>
+      <span class="title-letter" style="--letter-delay: 2360ms;">i</span>
+      <span class="title-letter" style="--letter-delay: 2080ms;">o</span>
+      <span class="title-letter" style="--letter-delay: 2580ms;">l</span>
+      <span class="title-letter" style="--letter-delay: 2240ms;">f</span>
+      <span class="title-letter" style="--letter-delay: 2820ms;">i</span>
+      <span class="title-letter" style="--letter-delay: 3040ms;">.</span>
+    </span>
   </h1>
 </section>
 
@@ -61,7 +79,7 @@
         </vc-home-whatsapp-card>
         <vc-home-meeting-card
           class="meeting"
-          [meetingUrl]="meetingUrl">
+          [meetingUrl]="meetingUrl()">
         </vc-home-meeting-card>
       </div>
     </div>

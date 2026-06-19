@@ -41,17 +41,18 @@
 
 .menu-link:hover,
 .menu-link:focus-visible {
-  color: var(--color-base-100);
+  color: var(--color-accent);
   transform: translateY(-4px) scale(1.16);
 }
 
 .menu-link:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-base-100) 32%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-focus) 30%, transparent);
 }
 
 .menu-link.active {
-  color: var(--color-base-900);
-  background: var(--color-base-100);
+  color: var(--color-accent-strong);
+  background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 28%, transparent);
 }
 
 .menu-link::before {

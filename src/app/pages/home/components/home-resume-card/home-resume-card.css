@@ -44,19 +44,35 @@
   line-height: 1.55;
 }
 
-.resume-cta {
-  display: inline-flex;
-  width: fit-content;
+.resume-footer {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  color: var(--color-base-0);
-  background: var(--color-surface-deep);
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resume-cta-text {
+  color: color-mix(in srgb, var(--color-base-900) 82%, black);
   font-size: 0.78rem;
   font-weight: 850;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.cta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  padding: 20px;
+  border-radius: 999px;
+  color: var(--color-base-900);
+  background: color-mix(in srgb, var(--color-base-0) 84%, transparent);
+  transition: transform 0.3s ease;
+}
+
+.resume-card:hover .cta,
+.resume-card:focus-visible .cta {
+  transform: rotate(20deg);
 }
 
 @media (max-width: 1280px) {
