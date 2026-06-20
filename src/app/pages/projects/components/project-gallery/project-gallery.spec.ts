@@ -16,14 +16,18 @@ describe('ProjectGalleryComponent', () => {
         name: 'Test Project',
         summary: 'A mocked summary',
         technologies: ['Angular', 'TypeScript'],
-        imageLabel: 'test image',
+        coverImage: '/blog-images/frontend-arch.png',
         externalUrl: 'https://example.com',
       },
     ];
     fixture.detectChanges();
   });
 
-  it('renders the provided project', () => {
+  it('renders the provided project cover and content', () => {
     expect(fixture.nativeElement.textContent).toContain('Test Project');
+    expect(fixture.nativeElement.querySelector('img')?.getAttribute('src')).toBe(
+      '/blog-images/frontend-arch.png'
+    );
+    expect(fixture.nativeElement.querySelector('img')?.getAttribute('alt')).toBe('Test Project');
   });
 });

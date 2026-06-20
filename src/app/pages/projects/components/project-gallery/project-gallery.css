@@ -21,16 +21,37 @@
 }
 
 .project-image {
+  position: relative;
   display: grid;
   min-height: 280px;
   place-items: end start;
   padding: 24px;
   background:
     linear-gradient(160deg, color-mix(in srgb, var(--color-accent-700) 82%, black), color-mix(in srgb, var(--color-accent) 62%, white)),
-    var(--color-accent-700);
+  var(--color-accent-700);
+  overflow: hidden;
+}
+
+.project-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 26%) 100%),
+    linear-gradient(90deg, rgb(0 0 0 / 24%) 0%, rgb(0 0 0 / 0%) 38%);
+  content: "";
 }
 
 .project-image span {
+  position: relative;
+  z-index: 1;
   max-width: 12ch;
   color: color-mix(in srgb, var(--color-base-0) 88%, transparent);
   font-family: var(--font-display);

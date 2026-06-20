@@ -72,11 +72,12 @@ describe('Home page', () => {
     expect(meetingUrl).toContain('add=verociolfi%40gmail.com');
   });
 
-  it('limits latest posts and keeps latest projects empty without project mocks', () => {
+  it('limits latest posts and previews the first project from the mock data', () => {
     const latestProjects = component.latestProjects();
     const latestPosts = component.latestPosts();
 
-    expect(latestProjects.length).toBe(0);
+    expect(latestProjects.length).toBe(1);
+    expect(latestProjects[0].name).toBe('Oracle Cat');
     expect(latestPosts.length).toBe(2);
     expect(latestPosts[0].title).toBe('O Problema Mais Caro do Frontend É a Confusão');
     expect(latestPosts[0].cover).toBe('blog-images/frontend-confusion.png');
@@ -138,12 +139,13 @@ describe('Home page', () => {
     const whatsappCard = fixture.debugElement.query(By.directive(HomeWhatsappCardComponent))
       .componentInstance as HomeWhatsappCardComponent;
 
-    expect(projectsCard).toBeNull();
+    expect(projectsCard).not.toBeNull();
+    expect((projectsCard.componentInstance as HomeLatestProjectsCardComponent).projects.length).toBe(1);
     expect(postsCard.posts.length).toBe(2);
     expect(experienceCard.experience).toBe(component.experience);
     expect(skillsCard.skills).toBe(component.skills);
     expect(meetingCard.meetingUrl).toBe(component.meetingUrl());
-    expect(resumeCard.resumePdfUrl()).toBe('cv/cv-veronica-ciolfi-pt.pdf');
+    expect(resumeCard.resumePdfUrl()).toBe('/cv/cv-veronica-ciolfi-pt.pdf');
     expect(socialCard.linkedinUrl).toBe(component.linkedinUrl);
     expect(stackCard.stack).toBe(component.stack);
     expect(whatsappCard.whatsappUrl).toBe(component.whatsappUrl);
@@ -158,4 +160,3 @@ describe('Home page', () => {
     expect(postsCard.posts[0].title).toBe('The Most Expensive Frontend Problem Is Confusion');
   });
 });
-

@@ -19,21 +19,25 @@ describe('ProjectsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('keeps pagination stable when there are no mocked projects', () => {
+  it('keeps pagination stable with the mocked projects', () => {
+    expect(component.hasProjects).toBe(true);
     expect(component.totalPages()).toBe(1);
-    expect(component.paginatedProjects().length).toBe(0);
+    expect(component.paginatedProjects().length).toBe(1);
+    expect(component.projects().length).toBe(1);
+    expect(component.projects()[0].slug).toBe('oracle-cat');
 
     component.nextPage();
 
     expect(component.currentPage()).toBe(1);
-    expect(component.paginatedProjects()[0]).toBeUndefined();
+    expect(component.paginatedProjects().length).toBe(1);
   });
 
-  it('keeps projects empty when locale changes without base projects', () => {
-    expect(component.projects()).toEqual([]);
+  it('recomputes the translated project content when locale changes', () => {
+    expect(component.projects()[0].name).toBe('Oracle Cat');
 
     component.i18n.setLocale('en-US');
 
-    expect(component.projects()).toEqual([]);
+    expect(component.projects()[0].name).toBe('Oracle Cat');
+    expect(component.projects()[0].summary).toContain('AI-powered oracle cat');
   });
 });

@@ -25,6 +25,7 @@ import {
   HOME_BLOG_HREF,
   HOME_BLOG_POSTS_BASE,
   HOME_BLOG_TRANSLATIONS_BY_LOCALE,
+  HOME_HAS_PROJECTS,
   HOME_EXPERIENCE,
   HOME_LATEST_ITEMS_COUNT,
   HOME_LINKEDIN_URL,
@@ -37,7 +38,6 @@ import {
   HOME_TECHNOLOGIES_PREVIEW_COUNT,
   HOME_WHATSAPP_URL,
 } from './home.constants';
-import projects from '../../../../mocks/projects/projects.base.json';
 
 @Component({
   selector: 'vc-home',
@@ -59,7 +59,7 @@ import projects from '../../../../mocks/projects/projects.base.json';
   styleUrl: './home.css',
 })
 export class Home {
-  readonly hasProjects = projects.length > 0;
+  readonly hasProjects = HOME_HAS_PROJECTS;
   readonly linkedinUrl = HOME_LINKEDIN_URL;
   readonly whatsappUrl = HOME_WHATSAPP_URL;
   readonly meetingGuestEmail = HOME_MEETING_GUEST_EMAIL;

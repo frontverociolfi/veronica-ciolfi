@@ -1,3 +1,15 @@
 [
-
+  {
+    "slug": "oracle-cat",
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "OpenAI API",
+      "Prompt Engineering"
+    ],
+    "coverImage": "/project-images/oracle-cat.png",
+    "externalUrl": "https://oracle-cat.onrender.com/"
+  }
 ]

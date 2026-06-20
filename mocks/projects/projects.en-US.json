@@ -1,22 +1,6 @@
 {
-  "veronica-portfolio": {
-    "name": "Veronica Portfolio",
-    "summary": "A personal portfolio built to feel editorial, structured, and a little cinematic while keeping the interaction model straightforward.",
-    "imageLabel": "portfolio identity"
-  },
-  "document-flow-platform": {
-    "name": "Document Flow Platform",
-    "summary": "A document management interface focused on clarity, auditability, and long-form operational workflows for enterprise teams.",
-    "imageLabel": "structured workflows"
-  },
-  "onboarding-experience-suite": {
-    "name": "Onboarding Experience Suite",
-    "summary": "A guided onboarding and product-tour experience designed to reduce friction for first-time users across a SaaS platform.",
-    "imageLabel": "guided setup"
-  },
-  "mobile-benefits-redesign": {
-    "name": "Mobile Benefits Redesign",
-    "summary": "A benefits app redesign balancing utility and warmth, with special attention to navigation, hierarchy, and component consistency.",
-    "imageLabel": "mobile product refresh"
+  "oracle-cat": {
+    "name": "Oracle Cat",
+    "summary": "An AI-powered oracle cat that answers every question with a witty, judgmental feline prophecy."
   }
 }

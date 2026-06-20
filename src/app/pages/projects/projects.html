@@ -9,12 +9,14 @@
 
   <vc-project-gallery [projects]="paginatedProjects()" />
 
-  <vc-pagination-controls
-    [ariaLabel]="i18n.t('projects.paginationAria')"
-    [currentPage]="currentPage()"
-    [totalPages]="totalPages()"
-    [totalItems]="projects().length"
-    (previous)="previousPage()"
-    (next)="nextPage()"
-  />
+  @if (hasProjects) {
+    <vc-pagination-controls
+      [ariaLabel]="i18n.t('projects.paginationAria')"
+      [currentPage]="currentPage()"
+      [totalPages]="totalPages()"
+      [totalItems]="projects().length"
+      (previous)="previousPage()"
+      (next)="nextPage()"
+    />
+  }
 </section>

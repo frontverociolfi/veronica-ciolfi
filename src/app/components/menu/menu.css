@@ -114,6 +114,33 @@
   }
 }
 
+@media (max-width: 768px) {
+  .menu {
+    transition: none;
+    transform: none;
+  }
+
+  .menu:has(.menu-link:hover),
+  .menu:has(.menu-link:focus-visible) {
+    padding-inline: 16px;
+    transform: none;
+  }
+
+  .menu-link {
+    transform: none;
+    transition: color 160ms ease, background-color 160ms ease;
+  }
+
+  .menu-link:hover,
+  .menu-link:focus-visible {
+    transform: none;
+  }
+
+  .menu-link::before {
+    display: none;
+  }
+}
+
 @media (max-width: 320px) {
   :host,
   .menu {

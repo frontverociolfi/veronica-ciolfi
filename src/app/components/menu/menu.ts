@@ -9,7 +9,7 @@ import {
   heroChatBubbleBottomCenterText,
   heroHome,
 } from '@ng-icons/heroicons/outline';
-import projects from '../../../../mocks/projects/projects.base.json';
+import { HAS_PROJECTS } from '../../pages/projects/projects.constants';
 
 @Component({
   selector: 'vc-menu',
@@ -31,12 +31,14 @@ export class MenuComponent {
 
   readonly items: ReadonlyArray<{ labelKey: TranslationKey; path: string; icon: string }> = [
     { labelKey: 'menu.home', path: '/', icon: 'heroHome' },
-     ...(projects.length > 0
-      ? [{
-          labelKey: 'menu.projects' as const,
-          path: '/projects',
-          icon: 'heroCommandLine',
-        }]
+    ...(HAS_PROJECTS
+      ? [
+          {
+            labelKey: 'menu.projects' as const,
+            path: '/projects',
+            icon: 'heroCommandLine',
+          },
+        ]
       : []),
     { labelKey: 'menu.blog', path: '/blog', icon: 'heroChatBubbleBottomCenterText' },
   ];

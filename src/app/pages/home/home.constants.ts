@@ -1,24 +1,20 @@
 import blogPostsBase from '../../../../mocks/blog/blog-posts.base.json';
 import blogPostsEnUs from '../../../../mocks/blog/blog-posts.en-US.json';
 import blogPostsPtBr from '../../../../mocks/blog/blog-posts.pt-BR.json';
-import {
-  BlogPostBase,
-  BlogPostTranslationsMap,
-} from '../blog/models/blog-post';
-import projectsBase from '../../../../mocks/projects/projects.base.json';
-import projectsEnUs from '../../../../mocks/projects/projects.en-US.json';
-import projectsPtBr from '../../../../mocks/projects/projects.pt-BR.json';
-import {
-  ProjectCardBase,
-  ProjectCardTranslationsMap,
-} from '../projects/models/project-card';
+import { BlogPostBase, BlogPostTranslationsMap } from '../blog/models/blog-post';
 import { Locale } from '../../core/i18n/i18n.service';
 import { HomeExperienceItem } from './components/home-experience-card/home-experience-card';
 import { HomeSkillItem } from './components/home-skills-card/home-skills-card';
+import {
+  HAS_PROJECTS,
+  PROJECTS_BASE,
+  PROJECTS_TRANSLATIONS_BY_LOCALE,
+} from '../projects/projects.constants';
+import { ProjectCardBase, ProjectCardTranslationsMap } from '../projects/models/project-card';
 
 export const HOME_RESUME_PDF_URL_BY_LOCALE: Record<Locale, string> = {
-  'pt-BR': 'cv/cv-veronica-ciolfi-pt.pdf',
-  'en-US': 'cv/cv-veronica-ciolfi-en.pdf',
+  'pt-BR': '/cv/cv-veronica-ciolfi-pt.pdf',
+  'en-US': '/cv/cv-veronica-ciolfi-en.pdf',
 };
 export const HOME_LINKEDIN_URL = 'https://www.linkedin.com/in/veronica-ciolfi/';
 export const HOME_WHATSAPP_URL =
@@ -125,14 +121,14 @@ export const HOME_STACK: ReadonlyArray<string> = [
 ];
 
 export const HOME_BLOG_POSTS_BASE = blogPostsBase as ReadonlyArray<BlogPostBase>;
-export const HOME_PROJECTS_BASE = projectsBase as ReadonlyArray<ProjectCardBase>;
+export const HOME_PROJECTS_BASE = PROJECTS_BASE as ReadonlyArray<ProjectCardBase>;
 
 export const HOME_BLOG_TRANSLATIONS_BY_LOCALE: Record<Locale, BlogPostTranslationsMap> = {
   'pt-BR': blogPostsPtBr as BlogPostTranslationsMap,
   'en-US': blogPostsEnUs as BlogPostTranslationsMap,
 };
 
-export const HOME_PROJECT_TRANSLATIONS_BY_LOCALE: Record<Locale, ProjectCardTranslationsMap> = {
-  'pt-BR': projectsPtBr as ProjectCardTranslationsMap,
-  'en-US': projectsEnUs as ProjectCardTranslationsMap,
-};
+export const HOME_PROJECT_TRANSLATIONS_BY_LOCALE: Record<Locale, ProjectCardTranslationsMap> =
+  PROJECTS_TRANSLATIONS_BY_LOCALE;
+
+export const HOME_HAS_PROJECTS = HAS_PROJECTS;

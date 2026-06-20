@@ -1,22 +1,6 @@
 {
-  "veronica-portfolio": {
-    "name": "Portfólio Veronica",
-    "summary": "Um portfólio pessoal pensado para parecer editorial, estruturado e um pouco cinematográfico, mantendo a interação simples e clara.",
-    "imageLabel": "identidade do portfólio"
-  },
-  "document-flow-platform": {
-    "name": "Plataforma de fluxo documental",
-    "summary": "Uma interface de gestão documental focada em clareza, auditabilidade e fluxos operacionais longos para equipes corporativas.",
-    "imageLabel": "fluxos estruturados"
-  },
-  "onboarding-experience-suite": {
-    "name": "Suite de onboarding",
-    "summary": "Uma experiência guiada de onboarding e tour de produto criada para reduzir atrito de primeiros acessos em uma plataforma SaaS.",
-    "imageLabel": "configuração guiada"
-  },
-  "mobile-benefits-redesign": {
-    "name": "Redesign de app de benefícios",
-    "summary": "Um redesign de aplicativo de benefícios equilibrando utilidade e acolhimento, com atenção especial à navegação, hierarquia e consistência dos componentes.",
-    "imageLabel": "renovação mobile"
+   "oracle-cat": {
+    "name": "Oracle Cat",
+    "summary": "Um oráculo felino movido por IA que responde a qualquer pergunta com profecias curtas, espirituosas e levemente julgadoras, guiadas por uma personalidade criada através de engenharia de prompts."
   }
 }

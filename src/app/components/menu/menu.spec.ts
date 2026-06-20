@@ -24,9 +24,10 @@ describe('MenuComponent', () => {
       'a.menu-link',
     ) as NodeListOf<HTMLAnchorElement>;
 
-    expect(links.length).toBe(2);
+    expect(links.length).toBe(3);
     expect(Array.from(links).map((link) => link.getAttribute('aria-label'))).toEqual([
       'Inicio',
+      'Projetos',
       'Blog',
     ]);
   });
