@@ -154,3 +154,15 @@
     transform: none;
   }
 }
+
+@media (max-width: 425px) {
+  .skill-container {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .skills-list {
+    gap: 14px;
+    margin: 0;
+  }
+}

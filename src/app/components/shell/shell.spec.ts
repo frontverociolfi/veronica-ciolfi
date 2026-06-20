@@ -40,6 +40,6 @@ describe('ShellComponent', () => {
   it('should render the footer copy', () => {
     const compiled = fixture.nativeElement as HTMLElement;
 
-    expect(compiled.textContent).toContain('Veronica Ciolfi @ 2026');
+    expect(compiled.textContent).toContain(`Veronica Ciolfi @ ${new Date().getFullYear()}`);
   });
 });

@@ -21,6 +21,10 @@
     filter 180ms ease;
 }
 
+.button-text {
+  display: none;
+}
+
 .whatsapp-card:hover,
 .whatsapp-card:focus-visible {
   transform: translateY(-3px);
@@ -46,7 +50,27 @@
 
 @media (max-width: 768px) {
   .whatsapp-card {
-    height: 100%;
+    display: flex;
+    min-height: 64px;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 20px;
+  }
+
+  .button-text {
+    display: block;
+    color: currentColor;
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .whatsapp-card ng-icon {
+    flex: 0 0 auto;
+    font-size: 1.65rem;
   }
 }
 

@@ -181,3 +181,26 @@
   }
 }
 
+@media (max-width: 425px) {
+  .latest-card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .item-list {
+    align-content: start;
+  }
+
+  .item-card {
+    min-height: 0;
+  }
+
+  .item-text p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+

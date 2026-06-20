@@ -20,6 +20,10 @@ describe('HomeWhatsappCardComponent', () => {
     expect(icon).not.toBeNull();
   });
 
+  it('renders the responsive button text', () => {
+    expect(fixture.nativeElement.textContent).toContain('Conversar no WhatsApp');
+  });
+
   it('uses the full card as an external link', () => {
     const link: HTMLAnchorElement | null = fixture.nativeElement.querySelector('a');
 

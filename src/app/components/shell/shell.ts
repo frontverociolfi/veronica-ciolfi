@@ -17,5 +17,7 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle';
   styleUrl: './shell.css',
 })
 export class ShellComponent {
+  readonly currentYear = new Date().getFullYear();
+
   constructor(readonly i18n: I18nService) {}
 }

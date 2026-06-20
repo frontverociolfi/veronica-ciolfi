@@ -20,6 +20,10 @@ describe('HomeSocialCardComponent', () => {
     expect(icon).not.toBeNull();
   });
 
+  it('renders the responsive button text', () => {
+    expect(fixture.nativeElement.textContent).toContain('Perfil profissional no LinkedIn');
+  });
+
   it('uses the full card as an external link', () => {
     const link: HTMLAnchorElement | null = fixture.nativeElement.querySelector('a');
 
