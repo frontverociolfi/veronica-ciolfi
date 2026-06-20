@@ -9,7 +9,8 @@ describe('blog post data', () => {
       expect.objectContaining({
         slug: 'the-most-expensive-frontend-problem-is-confusion',
         title: 'O Problema Mais Caro do Frontend É a Confusão',
-        contentFile: '/blog/frontend-confusion-pt.md',
+        cover: 'blog-images/frontend-confusion.png',
+        contentFile: 'blog/frontend-confusion-pt.md',
       }),
     );
   });
@@ -20,7 +21,8 @@ describe('blog post data', () => {
     expect(post).toEqual(
       expect.objectContaining({
         title: 'React vs Angular: The Wrong Frontend War',
-        contentFile: '/blog/frontend-war-en.md',
+        cover: 'blog-images/frontend-war.png',
+        contentFile: 'blog/frontend-war-en.md',
       }),
     );
   });

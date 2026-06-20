@@ -79,7 +79,7 @@ describe('Home page', () => {
     expect(latestProjects.length).toBe(0);
     expect(latestPosts.length).toBe(2);
     expect(latestPosts[0].title).toBe('O Problema Mais Caro do Frontend É a Confusão');
-    expect(latestPosts[0].cover).toBe('/blog-images/frontend-confusion.png');
+    expect(latestPosts[0].cover).toBe('blog-images/frontend-confusion.png');
     expect(latestPosts[0].href).toBe('/blog/the-most-expensive-frontend-problem-is-confusion');
   });
 
@@ -143,7 +143,7 @@ describe('Home page', () => {
     expect(experienceCard.experience).toBe(component.experience);
     expect(skillsCard.skills).toBe(component.skills);
     expect(meetingCard.meetingUrl).toBe(component.meetingUrl());
-    expect(resumeCard.resumePdfUrl()).toBe('/cv/cv-veronica-ciolfi-pt.pdf');
+    expect(resumeCard.resumePdfUrl()).toBe('cv/cv-veronica-ciolfi-pt.pdf');
     expect(socialCard.linkedinUrl).toBe(component.linkedinUrl);
     expect(stackCard.stack).toBe(component.stack);
     expect(whatsappCard.whatsappUrl).toBe(component.whatsappUrl);

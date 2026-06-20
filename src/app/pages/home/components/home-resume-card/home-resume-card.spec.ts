@@ -20,7 +20,7 @@ describe('HomeResumeCardComponent', () => {
   it('opens the Portuguese resume in a new tab by default', () => {
     const link = host.querySelector('a');
 
-    expect(link?.getAttribute('href')).toBe('/cv/cv-veronica-ciolfi-pt.pdf');
+    expect(link?.getAttribute('href')).toBe('cv/cv-veronica-ciolfi-pt.pdf');
     expect(link?.getAttribute('target')).toBe('_blank');
     expect(link?.getAttribute('rel')).toBe('noopener noreferrer');
   });
@@ -29,8 +29,8 @@ describe('HomeResumeCardComponent', () => {
     component.i18n.setLocale('en-US');
     fixture.detectChanges();
 
-    expect(component.resumePdfUrl()).toBe('/cv/cv-veronica-ciolfi-en.pdf');
-    expect(host.querySelector('a')?.getAttribute('href')).toBe('/cv/cv-veronica-ciolfi-en.pdf');
+    expect(component.resumePdfUrl()).toBe('cv/cv-veronica-ciolfi-en.pdf');
+    expect(host.querySelector('a')?.getAttribute('href')).toBe('cv/cv-veronica-ciolfi-en.pdf');
   });
 
   it('renders translated resume copy and CTA icon', () => {

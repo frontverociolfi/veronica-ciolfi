@@ -2,6 +2,7 @@ import basePosts from '../../../../mocks/blog/blog-posts.base.json';
 import postsEnUs from '../../../../mocks/blog/blog-posts.en-US.json';
 import postsPtBr from '../../../../mocks/blog/blog-posts.pt-BR.json';
 import { Locale } from '../../core/i18n/i18n.service';
+import { toPublicAssetPath } from '../../core/assets/public-asset-path';
 import { BlogPost, BlogPostBase, BlogPostTranslationsMap } from './models/blog-post';
 
 const localizedPostsByLocale: Record<Locale, BlogPostTranslationsMap> = {
@@ -12,10 +13,16 @@ const localizedPostsByLocale: Record<Locale, BlogPostTranslationsMap> = {
 export function resolveBlogPosts(locale: Locale): ReadonlyArray<BlogPost> {
   const translations = localizedPostsByLocale[locale];
 
-  return (basePosts as ReadonlyArray<BlogPostBase>).map((post) => ({
-    ...post,
-    ...translations[post.slug],
-  })) as ReadonlyArray<BlogPost>;
+  return (basePosts as ReadonlyArray<BlogPostBase>).map((post) => {
+    const localizedPost = translations[post.slug];
+
+    return {
+      ...post,
+      ...localizedPost,
+      cover: toPublicAssetPath(localizedPost.cover),
+      contentFile: toPublicAssetPath(localizedPost.contentFile),
+    };
+  }) as ReadonlyArray<BlogPost>;
 }
 
 export function resolveBlogPostBySlug(locale: Locale, slug: string): BlogPost | undefined {

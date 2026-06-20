@@ -17,8 +17,8 @@ import { HomeExperienceItem } from './components/home-experience-card/home-exper
 import { HomeSkillItem } from './components/home-skills-card/home-skills-card';
 
 export const HOME_RESUME_PDF_URL_BY_LOCALE: Record<Locale, string> = {
-  'pt-BR': '/cv/cv-veronica-ciolfi-pt.pdf',
-  'en-US': '/cv/cv-veronica-ciolfi-en.pdf',
+  'pt-BR': 'cv/cv-veronica-ciolfi-pt.pdf',
+  'en-US': 'cv/cv-veronica-ciolfi-en.pdf',
 };
 export const HOME_LINKEDIN_URL = 'https://www.linkedin.com/in/veronica-ciolfi/';
 export const HOME_WHATSAPP_URL =

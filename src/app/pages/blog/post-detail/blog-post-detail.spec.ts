@@ -43,7 +43,7 @@ export class QuietLayoutComponent {
     httpMock = TestBed.inject(HttpTestingController);
     fixture.detectChanges();
 
-    httpMock.expectOne('/blog/frontend-confusion-pt.md').flush(markdown);
+    httpMock.expectOne('blog/frontend-confusion-pt.md').flush(markdown);
     fixture.detectChanges();
   });
 
@@ -65,7 +65,7 @@ export class QuietLayoutComponent {
 
   it('renders the post cover image when cover is an image path', () => {
     const image: HTMLImageElement | null = fixture.nativeElement.querySelector(
-      '.post-cover-image img[src="/blog-images/frontend-confusion.png"]',
+      '.post-cover-image img[src="blog-images/frontend-confusion.png"]',
     );
 
     expect(image?.getAttribute('alt')).toBe('O Problema Mais Caro do Frontend É a Confusão');

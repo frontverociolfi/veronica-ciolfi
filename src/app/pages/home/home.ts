@@ -20,6 +20,7 @@ import { HomeStackCardComponent } from './components/home-stack-card/home-stack-
 import { HomeWhatsappCardComponent } from './components/home-whatsapp-card/home-whatsapp-card';
 import { BlogPostTranslation } from '../blog/models/blog-post';
 import { ProjectCardTranslation } from '../projects/models/project-card';
+import { toPublicAssetPath } from '../../core/assets/public-asset-path';
 import {
   HOME_BLOG_HREF,
   HOME_BLOG_POSTS_BASE,
@@ -100,7 +101,7 @@ export class Home {
         title: localized.title,
         excerpt: localized.excerpt,
         category: localized.category,
-        cover: localized.cover,
+        cover: toPublicAssetPath(localized.cover),
         href: `${HOME_BLOG_HREF}/${post.slug}`,
       } satisfies HomeLatestPostItem;
     });
