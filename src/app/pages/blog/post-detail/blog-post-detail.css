@@ -85,6 +85,23 @@ vc-blog-post-detail .post-meta {
   text-transform: uppercase;
 }
 
+vc-blog-post-detail .post-cover-image {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--color-surface-deep) 92%, black);
+  box-shadow:
+    0 24px 60px color-mix(in srgb, black 16%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-base-100) 8%, transparent);
+}
+
+vc-blog-post-detail .post-cover-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 vc-blog-post-detail .post-divider {
   height: 1px;
   background: linear-gradient(
@@ -283,4 +300,3 @@ vc-blog-post-detail .blog-post-empty {
     transform: none;
   }
 }
-

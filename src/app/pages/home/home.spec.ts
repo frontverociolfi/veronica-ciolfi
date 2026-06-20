@@ -72,17 +72,15 @@ describe('Home page', () => {
     expect(meetingUrl).toContain('add=verociolfi%40gmail.com');
   });
 
-  it('limits latest projects and posts to two localized entries in pt-BR', () => {
+  it('limits latest posts and keeps latest projects empty without project mocks', () => {
     const latestProjects = component.latestProjects();
     const latestPosts = component.latestPosts();
 
-    expect(latestProjects.length).toBe(2);
-    expect(latestProjects[0].name).toBe('Portfólio Veronica');
-    expect(latestProjects[0].technologies).toEqual(['Angular', 'TypeScript', 'CSS']);
-    expect(latestProjects[0].href).toBe('/projects');
+    expect(latestProjects.length).toBe(0);
     expect(latestPosts.length).toBe(2);
-    expect(latestPosts[0].title).toBe('Construindo interfaces Angular silenciosas');
-    expect(latestPosts[0].href).toBe('/blog');
+    expect(latestPosts[0].title).toBe('O Problema Mais Caro do Frontend É a Confusão');
+    expect(latestPosts[0].cover).toBe('/blog-images/frontend-confusion.png');
+    expect(latestPosts[0].href).toBe('/blog/the-most-expensive-frontend-problem-is-confusion');
   });
 
   it('exposes the expected static datasets for experience, skills, and stack', () => {
@@ -106,12 +104,8 @@ describe('Home page', () => {
   it('recomputes localized content and the meeting URL when the locale changes to en-US', () => {
     component.i18n.setLocale('en-US');
     fixture.detectChanges();
-
-    const latestProjects = component.latestProjects();
     const latestPosts = component.latestPosts();
-
-    expect(latestProjects[0].name).toBe('Veronica Portfolio');
-    expect(latestPosts[0].title).toBe('Building Quiet Angular Interfaces');
+    expect(latestPosts[0].title).toBe('The Most Expensive Frontend Problem Is Confusion');
     expect(component.meetingUrl()).toContain('text=Call+with+Veronica+Ciolfi');
   });
 
@@ -126,8 +120,7 @@ describe('Home page', () => {
   });
 
   it('passes the derived data and urls down to the child cards', () => {
-    const projectsCard = fixture.debugElement.query(By.directive(HomeLatestProjectsCardComponent))
-      .componentInstance as HomeLatestProjectsCardComponent;
+    const projectsCard = fixture.debugElement.query(By.directive(HomeLatestProjectsCardComponent));
     const postsCard = fixture.debugElement.query(By.directive(HomeLatestPostsCardComponent))
       .componentInstance as HomeLatestPostsCardComponent;
     const meetingCard = fixture.debugElement.query(By.directive(HomeMeetingCardComponent))
@@ -145,12 +138,12 @@ describe('Home page', () => {
     const whatsappCard = fixture.debugElement.query(By.directive(HomeWhatsappCardComponent))
       .componentInstance as HomeWhatsappCardComponent;
 
-    expect(projectsCard.projects.length).toBe(2);
+    expect(projectsCard).toBeNull();
     expect(postsCard.posts.length).toBe(2);
     expect(experienceCard.experience).toBe(component.experience);
     expect(skillsCard.skills).toBe(component.skills);
     expect(meetingCard.meetingUrl).toBe(component.meetingUrl());
-    expect(resumeCard.resumePdfUrl).toBe(component.resumePdfUrl);
+    expect(resumeCard.resumePdfUrl()).toBe('/cv/cv-veronica-ciolfi-pt.pdf');
     expect(socialCard.linkedinUrl).toBe(component.linkedinUrl);
     expect(stackCard.stack).toBe(component.stack);
     expect(whatsappCard.whatsappUrl).toBe(component.whatsappUrl);
@@ -160,12 +153,9 @@ describe('Home page', () => {
     component.i18n.setLocale('en-US');
     fixture.detectChanges();
 
-    const projectsCard = fixture.debugElement.query(By.directive(HomeLatestProjectsCardComponent))
-      .componentInstance as HomeLatestProjectsCardComponent;
     const postsCard = fixture.debugElement.query(By.directive(HomeLatestPostsCardComponent))
       .componentInstance as HomeLatestPostsCardComponent;
-
-    expect(projectsCard.projects[0].name).toBe('Veronica Portfolio');
-    expect(postsCard.posts[0].title).toBe('Building Quiet Angular Interfaces');
+    expect(postsCard.posts[0].title).toBe('The Most Expensive Frontend Problem Is Confusion');
   });
 });
+

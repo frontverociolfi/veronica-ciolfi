@@ -12,10 +12,15 @@
         <p class="post-excerpt">{{ post.excerpt }}</p>
 
         <div class="post-meta">
-          <span>{{ post.publishedAt | date: 'MMM d, y' }}</span>
           <span>{{ post.readingTime }}</span>
         </div>
       </header>
+
+      @if (isCoverImage(post.cover)) {
+        <figure class="post-cover-image">
+          <img [src]="post.cover" [alt]="post.title" />
+        </figure>
+      }
 
       <div class="post-divider" aria-hidden="true"></div>
 

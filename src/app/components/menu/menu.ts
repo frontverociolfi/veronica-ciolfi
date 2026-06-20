@@ -6,9 +6,10 @@ import {
   heroBriefcase,
   heroCommandLine,
   heroEnvelope,
-  heroPaperClip,
+  heroChatBubbleBottomCenterText,
   heroHome,
 } from '@ng-icons/heroicons/outline';
+import projects from '../../../../mocks/projects/projects.base.json';
 
 @Component({
   selector: 'vc-menu',
@@ -19,7 +20,7 @@ import {
       heroCommandLine,
       heroEnvelope,
       heroHome,
-      heroPaperClip
+      heroChatBubbleBottomCenterText
     }),
   ],
   templateUrl: './menu.html',
@@ -30,7 +31,13 @@ export class MenuComponent {
 
   readonly items: ReadonlyArray<{ labelKey: TranslationKey; path: string; icon: string }> = [
     { labelKey: 'menu.home', path: '/', icon: 'heroHome' },
-    { labelKey: 'menu.projects', path: '/projects', icon: 'heroCommandLine' },
-    { labelKey: 'menu.blog', path: '/blog', icon: 'heroPaperClip' },
+     ...(projects.length > 0
+      ? [{
+          labelKey: 'menu.projects' as const,
+          path: '/projects',
+          icon: 'heroCommandLine',
+        }]
+      : []),
+    { labelKey: 'menu.blog', path: '/blog', icon: 'heroChatBubbleBottomCenterText' },
   ];
 }

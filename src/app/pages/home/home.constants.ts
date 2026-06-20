@@ -1,13 +1,13 @@
-import blogPostsBase from '../blog/mocks/blog-posts.base.json';
-import blogPostsEnUs from '../blog/mocks/blog-posts.en-US.json';
-import blogPostsPtBr from '../blog/mocks/blog-posts.pt-BR.json';
+import blogPostsBase from '../../../../mocks/blog/blog-posts.base.json';
+import blogPostsEnUs from '../../../../mocks/blog/blog-posts.en-US.json';
+import blogPostsPtBr from '../../../../mocks/blog/blog-posts.pt-BR.json';
 import {
   BlogPostBase,
   BlogPostTranslationsMap,
 } from '../blog/models/blog-post';
-import projectsBase from '../projects/mocks/projects.base.json';
-import projectsEnUs from '../projects/mocks/projects.en-US.json';
-import projectsPtBr from '../projects/mocks/projects.pt-BR.json';
+import projectsBase from '../../../../mocks/projects/projects.base.json';
+import projectsEnUs from '../../../../mocks/projects/projects.en-US.json';
+import projectsPtBr from '../../../../mocks/projects/projects.pt-BR.json';
 import {
   ProjectCardBase,
   ProjectCardTranslationsMap,
@@ -16,7 +16,10 @@ import { Locale } from '../../core/i18n/i18n.service';
 import { HomeExperienceItem } from './components/home-experience-card/home-experience-card';
 import { HomeSkillItem } from './components/home-skills-card/home-skills-card';
 
-export const HOME_RESUME_PDF_URL = '/cv-veronica-ciolfi.pdf';
+export const HOME_RESUME_PDF_URL_BY_LOCALE: Record<Locale, string> = {
+  'pt-BR': '/cv/cv-veronica-ciolfi-pt.pdf',
+  'en-US': '/cv/cv-veronica-ciolfi-en.pdf',
+};
 export const HOME_LINKEDIN_URL = 'https://www.linkedin.com/in/veronica-ciolfi/';
 export const HOME_WHATSAPP_URL =
   'https://wa.me/5514991947676?text=Ol%C3%A1,%20vi%20seu%20perfil%20pessoal%20e%20fiquei%20interassado(a)%20nas%20suas%20qualifica%C3%A7%C3%B5es%20profissionais!%20Vamos%20conversar?';

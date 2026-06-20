@@ -182,9 +182,9 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'pagination.of': 'de',
     'pagination.items': 'itens',
     'blog.kicker': 'Blog',
-    'blog.title': 'Notas sobre frontend, sistemas e tecnologia criativa.',
+    'blog.title': 'Escrevendo sobre o que construo.',
     'blog.description':
-      'Uma listagem leve de posts alimentada por JSON mockado para poder evoluir depois para um fluxo real de conteudo.',
+      'Notas de uma engenheira frontend sobre Angular, React, arquitetura, experiência do usuário e os pequenos detalhes que tornam produtos melhores.',
     'blog.listAria': 'Lista de posts do blog',
     'blog.readPost': 'Ler post',
     'blog.backToBlog': 'Voltar para o blog',
@@ -317,9 +317,9 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     'pagination.of': 'of',
     'pagination.items': 'items',
     'blog.kicker': 'Blog',
-    'blog.title': 'Notes on frontend, systems, and creative technology.',
+    'blog.title': 'Writing about what I build.',
     'blog.description':
-      'A lightweight post index fed by mocked JSON so the page can grow into a real content flow later.',
+      'Insights from a frontend engineer exploring Angular, React, software architecture, and the details that make products feel intentional.',
     'blog.listAria': 'Blog posts list',
     'blog.readPost': 'Read post',
     'blog.backToBlog': 'Back to blog',

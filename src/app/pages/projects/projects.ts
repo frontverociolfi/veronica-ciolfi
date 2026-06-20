@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
-import baseProjects from './mocks/projects.base.json';
-import projectsEnUs from './mocks/projects.en-US.json';
-import projectsPtBr from './mocks/projects.pt-BR.json';
+import baseProjects from '../../../../mocks/projects/projects.base.json';
+import projectsEnUs from '../../../../mocks/projects/projects.en-US.json';
+import projectsPtBr from '../../../../mocks/projects/projects.pt-BR.json';
 import { ProjectGalleryComponent } from './components/project-gallery/project-gallery';
 import { ProjectCard, ProjectCardBase, ProjectCardTranslationsMap } from './models/project-card';
 import { PaginationControlsComponent } from '../../components/pagination-controls/pagination-controls';
@@ -30,7 +30,7 @@ export class ProjectsComponent {
 
   readonly pageSize = 2;
   readonly currentPage = signal(1);
-  readonly totalPages = computed(() => Math.ceil(this.projects().length / this.pageSize));
+  readonly totalPages = computed(() => Math.max(1, Math.ceil(this.projects().length / this.pageSize)));
   readonly paginatedProjects = computed(() => {
     const start = (this.currentPage() - 1) * this.pageSize;
     return this.projects().slice(start, start + this.pageSize);

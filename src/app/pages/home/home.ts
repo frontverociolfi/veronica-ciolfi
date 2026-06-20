@@ -1,8 +1,6 @@
 import { Component, computed } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
-import {
-  HomeExperienceCardComponent,
-} from './components/home-experience-card/home-experience-card';
+import { HomeExperienceCardComponent } from './components/home-experience-card/home-experience-card';
 import { HomeHeroLogoTileComponent } from './components/home-logo-tile/home-logo-tile';
 import { HomeIntroCardComponent } from './components/home-intro-card/home-intro-card';
 import {
@@ -20,12 +18,8 @@ import { HomeSkillsCardComponent } from './components/home-skills-card/home-skil
 import { HomeSocialCardComponent } from './components/home-social-card/home-social-card';
 import { HomeStackCardComponent } from './components/home-stack-card/home-stack-card';
 import { HomeWhatsappCardComponent } from './components/home-whatsapp-card/home-whatsapp-card';
-import {
-  BlogPostTranslation,
-} from '../blog/models/blog-post';
-import {
-  ProjectCardTranslation,
-} from '../projects/models/project-card';
+import { BlogPostTranslation } from '../blog/models/blog-post';
+import { ProjectCardTranslation } from '../projects/models/project-card';
 import {
   HOME_BLOG_HREF,
   HOME_BLOG_POSTS_BASE,
@@ -37,12 +31,12 @@ import {
   HOME_PROJECTS_BASE,
   HOME_PROJECTS_HREF,
   HOME_PROJECT_TRANSLATIONS_BY_LOCALE,
-  HOME_RESUME_PDF_URL,
   HOME_SKILLS,
   HOME_STACK,
   HOME_TECHNOLOGIES_PREVIEW_COUNT,
   HOME_WHATSAPP_URL,
 } from './home.constants';
+import projects from '../../../../mocks/projects/projects.base.json';
 
 @Component({
   selector: 'vc-home',
@@ -64,7 +58,7 @@ import {
   styleUrl: './home.css',
 })
 export class Home {
-  readonly resumePdfUrl = HOME_RESUME_PDF_URL;
+  readonly hasProjects = projects.length > 0;
   readonly linkedinUrl = HOME_LINKEDIN_URL;
   readonly whatsappUrl = HOME_WHATSAPP_URL;
   readonly meetingGuestEmail = HOME_MEETING_GUEST_EMAIL;
@@ -72,7 +66,7 @@ export class Home {
     this.buildGoogleCalendarEventUrl({
       title: this.i18n.t('home.meetingEventTitle'),
       guestEmail: this.meetingGuestEmail,
-    })
+    }),
   );
 
   readonly experience = HOME_EXPERIENCE;
@@ -106,8 +100,8 @@ export class Home {
         title: localized.title,
         excerpt: localized.excerpt,
         category: localized.category,
-        publishedAt: post.publishedAt,
-        href: HOME_BLOG_HREF,
+        cover: localized.cover,
+        href: `${HOME_BLOG_HREF}/${post.slug}`,
       } satisfies HomeLatestPostItem;
     });
   });

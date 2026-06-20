@@ -1,7 +1,7 @@
-import basePosts from './mocks/blog-posts.base.json';
-import postsEnUs from './mocks/blog-posts.en-US.json';
-import postsPtBr from './mocks/blog-posts.pt-BR.json';
-import { I18nService, Locale } from '../../core/i18n/i18n.service';
+import basePosts from '../../../../mocks/blog/blog-posts.base.json';
+import postsEnUs from '../../../../mocks/blog/blog-posts.en-US.json';
+import postsPtBr from '../../../../mocks/blog/blog-posts.pt-BR.json';
+import { Locale } from '../../core/i18n/i18n.service';
 import { BlogPost, BlogPostBase, BlogPostTranslationsMap } from './models/blog-post';
 
 const localizedPostsByLocale: Record<Locale, BlogPostTranslationsMap> = {

@@ -15,7 +15,6 @@ describe('HomeStackCardComponent', () => {
   });
 
   it('renders the stack title', () => {
-    expect(fixture.nativeElement.textContent).toContain('Ferramentas que eu busco primeiro.');
+    expect(fixture.nativeElement.textContent).toContain('Stacks que eu uso sempre.');
   });
 });
-

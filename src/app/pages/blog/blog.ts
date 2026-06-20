@@ -15,7 +15,7 @@ export class BlogComponent {
 
   readonly pageSize = 4;
   readonly currentPage = signal(1);
-  readonly totalPages = computed(() => Math.ceil(this.posts().length / this.pageSize));
+  readonly totalPages = computed(() => Math.max(1, Math.ceil(this.posts().length / this.pageSize)));
   readonly paginatedPosts = computed(() => {
     const start = (this.currentPage() - 1) * this.pageSize;
     return this.posts().slice(start, start + this.pageSize);

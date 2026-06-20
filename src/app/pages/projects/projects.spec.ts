@@ -19,21 +19,21 @@ describe('ProjectsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('paginates the mocked projects', () => {
-    expect(component.totalPages()).toBe(2);
-    expect(component.paginatedProjects().length).toBe(2);
+  it('keeps pagination stable when there are no mocked projects', () => {
+    expect(component.totalPages()).toBe(1);
+    expect(component.paginatedProjects().length).toBe(0);
 
     component.nextPage();
 
-    expect(component.currentPage()).toBe(2);
-    expect(component.paginatedProjects()[0]?.slug).toBe('onboarding-experience-suite');
+    expect(component.currentPage()).toBe(1);
+    expect(component.paginatedProjects()[0]).toBeUndefined();
   });
 
-  it('updates project content when locale changes', () => {
-    expect(component.projects()[0]?.name).toBe('Portfólio Veronica');
+  it('keeps projects empty when locale changes without base projects', () => {
+    expect(component.projects()).toEqual([]);
 
     component.i18n.setLocale('en-US');
 
-    expect(component.projects()[0]?.name).toBe('Veronica Portfolio');
+    expect(component.projects()).toEqual([]);
   });
 });

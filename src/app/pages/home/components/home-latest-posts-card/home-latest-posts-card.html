@@ -13,14 +13,23 @@
   <div class="item-list">
     @for (post of posts; track post.slug) {
       <a class="item-card" [routerLink]="post.href">
-        <div class="item-meta">
-          <span>{{ post.category }}</span>
-          <time [attr.datetime]="post.publishedAt">{{ post.publishedAt | date: 'MMM d, y' }}</time>
+        <div class="item-cover" aria-hidden="true">
+          @if (isCoverImage(post.cover)) {
+            <img [src]="post.cover" alt="" loading="lazy" />
+          } @else {
+            <span>{{ post.cover }}</span>
+          }
         </div>
 
         <div class="item-copy">
-          <strong>{{ post.title }}</strong>
-          <p>{{ post.excerpt }}</p>
+          <div class="item-meta">
+            <span>{{ post.category }}</span>
+          </div>
+
+          <div class="item-text">
+            <strong>{{ post.title }}</strong>
+            <p>{{ post.excerpt }}</p>
+          </div>
         </div>
       </a>
     }

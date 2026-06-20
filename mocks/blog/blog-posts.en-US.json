@@ -1,0 +1,66 @@
+{
+  "why-most-components-are-too-flexible": {
+    "title": "Why Most Components Are Too Flexible?",
+    "excerpt": "Not every form of flexibility leads to reuse. Sometimes trying to support every possible scenario makes components harder to understand, maintain, and evolve.",
+    "category": "Frontend",
+    "readingTime": "10 min read",
+    "cover": "/blog-images/components-flexibility.png",
+    "contentFile": "/blog/components-flexibility-en.md"
+  },
+  "angular-21-small-changes-that-matter": {
+    "title": "Angular 21: Small Changes That Matter",
+    "excerpt": "Why Angular's latest release feels less like a revolution and more like another step toward simpler, more predictable frontend development.",
+    "category": "Angular",
+    "readingTime": "5 min read",
+    "cover": "/blog-images/angular-21-small-changes.png",
+    "contentFile": "/blog/angular-21-small-changes-en.md"
+  },
+  "frontend-is-mostly-about-data": {
+    "title": "Frontend Is Mostly About Data, Not Interfaces",
+    "excerpt": "After a few years building real-world applications, you realize most frontend complexity doesn't come from components or CSS. It comes from data.",
+    "category": "Frontend",
+    "readingTime": "11 min read",
+    "cover": "/blog-images/frontend-data-not-interfaces.png",
+    "contentFile": "/blog/frontend-data-not-interfaces-en.md"
+  },
+  "frontend-war": {
+    "title": "React vs Angular: The Wrong Frontend War",
+    "excerpt": "After working with both frameworks professionally, I've come to believe the real winner isn't React or Angular. It's TypeScript.",
+    "category": "Frontend",
+    "readingTime": "8 min read",
+    "cover": "/blog-images/frontend-war.png",
+    "contentFile": "/blog/frontend-war-en.md"
+  },
+  "frontend-arch": {
+    "title": "Frontend Architecture: Complexity Is a Debt, Not a Feature",
+    "excerpt": "Most frontend architecture problems don't come from a lack of structure. They come from adding structure before reality demands it.",
+    "category": "Architecture",
+    "readingTime": "10 min read",
+    "cover": "/blog-images/frontend-arch.png",
+    "contentFile": "/blog/frontend-arch-en.md"
+  },
+  "localhost-cors-explained": {
+    "title": "If Everything Is Running on Localhost, Why Do We Still Get CORS Errors?",
+    "excerpt": "A practical explanation of origins, browser security, and why localhost applications can still trigger CORS errors.",
+    "category": "Web Development",
+    "readingTime": "8 min read",
+    "cover": "/blog-images/cors-explained.png",
+    "contentFile": "/blog/localhost-cors-explained-en.md"
+  },
+  "the-most-expensive-frontend-problem-is-confusion": {
+    "title": "The Most Expensive Frontend Problem Is Confusion",
+    "excerpt": "Bugs can be fixed. Confusion can survive for years. And in many cases, it costs teams far more than any individual technical problem.",
+    "category": "Architecture",
+    "readingTime": "11 min read",
+    "cover": "/blog-images/frontend-confusion.png",
+    "contentFile": "/blog/frontend-confusion-en.md"
+  },
+   "every-frontend-team-eventually-builds-a-design-system": {
+    "title": "Every Frontend Team Eventually Builds a Design System",
+    "excerpt": "You may not call it a design system, but the moment components, patterns, and decisions start being shared, one is already taking shape.",
+    "category": "Design Systems",
+    "readingTime": "10 min read",
+    "cover": "/blog-images/design-system-evolution.png",
+    "contentFile": "/blog/design-system-evolution-en.md"
+  }
+}

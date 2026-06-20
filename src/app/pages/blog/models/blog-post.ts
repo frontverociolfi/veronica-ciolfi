@@ -3,15 +3,13 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   category: string;
-  publishedAt: string;
   readingTime: string;
   cover: string;
-  content: string;
+  contentFile: string;
 }
 
 export interface BlogPostBase {
   slug: string;
-  publishedAt: string;
 }
 
 export interface BlogPostTranslation {
@@ -20,7 +18,7 @@ export interface BlogPostTranslation {
   category: string;
   readingTime: string;
   cover: string;
-  content: string;
+  contentFile: string;
 }
 
 export type BlogPostTranslationsMap = Record<string, BlogPostTranslation>;

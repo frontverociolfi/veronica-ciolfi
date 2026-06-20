@@ -18,10 +18,18 @@ describe('PostListComponent', () => {
         title: 'Test Post',
         excerpt: 'A mocked excerpt',
         category: 'Frontend',
-        publishedAt: '2026-06-10',
         readingTime: '6 min read',
         cover: 'interface systems',
-        content: '# Test Post',
+        contentFile: '/blog/test-post.md',
+      },
+      {
+        slug: 'image-post',
+        title: 'Image Post',
+        excerpt: 'A post with a cover image',
+        category: 'Angular',
+        readingTime: '5 min read',
+        cover: '/blog-images/angular-21-small-changes.png',
+        contentFile: '/blog/image-post.md',
       },
     ];
     fixture.detectChanges();
@@ -29,5 +37,13 @@ describe('PostListComponent', () => {
 
   it('renders the provided post', () => {
     expect(fixture.nativeElement.textContent).toContain('Test Post');
+  });
+
+  it('renders image covers as images', () => {
+    const image: HTMLImageElement | null = fixture.nativeElement.querySelector(
+      '.post-cover img[src="/blog-images/angular-21-small-changes.png"]',
+    );
+
+    expect(image).not.toBeNull();
   });
 });

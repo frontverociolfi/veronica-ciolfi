@@ -23,24 +23,24 @@ describe('BlogComponent', () => {
   });
 
   it('renders the blog heading', () => {
-    expect(fixture.nativeElement.textContent).toContain('Notas sobre frontend, sistemas e tecnologia criativa.');
+    expect(fixture.nativeElement.textContent).toContain('Escrevendo sobre o que construo.');
   });
 
   it('paginates the mocked posts', () => {
-    expect(component.totalPages()).toBe(3);
+    expect(component.totalPages()).toBe(2);
     expect(component.paginatedPosts().length).toBe(4);
 
     component.nextPage();
 
     expect(component.currentPage()).toBe(2);
-    expect(component.paginatedPosts()[0]?.slug).toBe('naming-things-in-design-systems');
+    expect(component.paginatedPosts()[0]?.slug).toBe('frontend-war');
   });
 
   it('updates post content when locale changes', () => {
-    expect(component.posts()[0]?.title).toBe('Construindo interfaces Angular silenciosas');
+    expect(component.posts()[0]?.title).toBe('O Problema Mais Caro do Frontend É a Confusão');
 
     component.i18n.setLocale('en-US');
 
-    expect(component.posts()[0]?.title).toBe('Building Quiet Angular Interfaces');
+    expect(component.posts()[0]?.title).toBe('The Most Expensive Frontend Problem Is Confusion');
   });
 });

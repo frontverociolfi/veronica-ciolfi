@@ -39,17 +39,17 @@
       class="skills"
       [skills]="skills">
     </vc-home-skills-card>
-    <vc-home-resume-card
-      class="resume"
-      [resumePdfUrl]="resumePdfUrl">
+    <vc-home-resume-card class="resume">
     </vc-home-resume-card>
   </div>
 
   <div class="grid-row grid-row-content">
+    @if (hasProjects) {
     <vc-home-latest-projects-card
       class="latest-projects"
       [projects]="latestProjects()">
     </vc-home-latest-projects-card>
+  }
     <vc-home-latest-posts-card
       class="latest-posts"
       [posts]="latestPosts()">
