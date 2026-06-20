@@ -1,13 +1,9 @@
 import { Component, computed, signal } from '@angular/core';
 import { ProjectGalleryComponent } from './components/project-gallery/project-gallery';
-import { ProjectCard } from './models/project-card';
 import { PaginationControlsComponent } from '../../components/pagination-controls/pagination-controls';
 import { I18nService } from '../../core/i18n/i18n.service';
-import {
-  HAS_PROJECTS,
-  PROJECTS_BASE,
-  PROJECTS_TRANSLATIONS_BY_LOCALE,
-} from './projects.constants';
+import { HAS_PROJECTS } from './projects.constants';
+import { resolveProjects } from './projects-data';
 
 @Component({
   selector: 'vc-projects',
@@ -17,14 +13,7 @@ import {
 })
 export class ProjectsComponent {
   readonly hasProjects = HAS_PROJECTS;
-  readonly projects = computed(() => {
-    const translations = PROJECTS_TRANSLATIONS_BY_LOCALE[this.i18n.locale()];
-
-    return PROJECTS_BASE.map((project) => ({
-      ...project,
-      ...translations[project.slug],
-    })) as ReadonlyArray<ProjectCard>;
-  });
+  readonly projects = computed(() => resolveProjects(this.i18n.locale()));
 
   readonly pageSize = 2;
   readonly currentPage = signal(1);
