@@ -196,10 +196,9 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
       'Esse artigo nao existe ou ainda nao foi publicado nessa versao do portfolio.',
     'blog.paginationAria': 'Paginacao do blog',
     'projects.kicker': 'Projetos',
-    'projects.title':
-      'Projetos selecionados entre sistemas frontend, superficies de produto e experimentos criativos.',
+    'projects.title': 'Frontend, produtos digitais e projetos feitos por paixão.',
     'projects.description':
-      'Uma galeria simples de cards de projeto com conteudo mockado, pronta para ser substituida por estudos de caso reais depois.',
+      'Uma seleção de trabalhos que refletem minha experiência, interesses e forma de construir para a web.',
     'projects.galleryAria': 'Galeria de projetos',
     'projects.visitProject': 'Visitar projeto',
     'projects.paginationAria': 'Paginacao de projetos',
@@ -331,10 +330,8 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
       'This article does not exist or has not been published in this portfolio version yet.',
     'blog.paginationAria': 'Blog pagination',
     'projects.kicker': 'Projects',
-    'projects.title':
-      'Selected builds across frontend systems, product surfaces, and creative experiments.',
-    'projects.description':
-      'A simple gallery of project cards with mocked content, ready to be replaced by real case studies later.',
+    'projects.title': 'Frontend, digital products, and projects built out of passion.',
+    'projects.description': 'A selection of work that reflects my experience, interests, and approach to building for the web.',
     'projects.galleryAria': 'Project gallery',
     'projects.visitProject': 'Visit project',
     'projects.paginationAria': 'Projects pagination',
