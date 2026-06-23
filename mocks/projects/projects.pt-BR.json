@@ -1,6 +1,10 @@
 {
-   "oracle-cat": {
+  "oracle-cat": {
     "name": "Oracle Cat",
     "summary": "Um oráculo felino movido por IA que responde a qualquer pergunta com profecias curtas, espirituosas e levemente julgadoras, guiadas por uma personalidade criada através de engenharia de prompts."
+  },
+  "frontend-architecture-explorer": {
+    "name": "Frontend Architecture Explorer",
+    "summary": "Um playground interativo para explorar padrões de arquitetura frontend, estratégias de organização de projetos e os trade-offs por trás de decisões reais de engenharia."
   }
 }

@@ -2,5 +2,11 @@
   "oracle-cat": {
     "name": "Oracle Cat",
     "summary": "An AI-powered oracle cat that answers every question with a witty, judgmental feline prophecy."
+  },
+    "frontend-architecture-explorer": {
+    "name": "Frontend Architecture Explorer",
+    "summary": "An interactive playground for exploring frontend architecture patterns, project organization strategies, and the trade-offs behind real-world engineering decisions."
   }
+
+
 }

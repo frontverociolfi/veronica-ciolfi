@@ -1,4 +1,14 @@
 [
+    {
+    "slug": "frontend-architecture-explorer",
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "SCSS"
+    ],
+    "coverImage": "/project-images/frontend-architecture-explorer.png",
+    "externalUrl": "https://frontverociolfi.github.io/frontend-architecture-explorer/"
+  },
   {
     "slug": "oracle-cat",
     "technologies": [
@@ -12,4 +22,7 @@
     "coverImage": "/project-images/oracle-cat.png",
     "externalUrl": "https://oracle-cat.onrender.com/"
   }
+
+
+
 ]
