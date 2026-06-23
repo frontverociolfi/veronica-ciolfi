@@ -22,22 +22,22 @@ describe('ProjectsComponent', () => {
   it('keeps pagination stable with the mocked projects', () => {
     expect(component.hasProjects).toBe(true);
     expect(component.totalPages()).toBe(1);
-    expect(component.paginatedProjects().length).toBe(1);
-    expect(component.projects().length).toBe(1);
-    expect(component.projects()[0].slug).toBe('oracle-cat');
+    expect(component.paginatedProjects().length).toBe(2);
+    expect(component.projects().length).toBe(2);
+    expect(component.projects()[0].slug).toBe('frontend-architecture-explorer');
 
     component.nextPage();
 
     expect(component.currentPage()).toBe(1);
-    expect(component.paginatedProjects().length).toBe(1);
+    expect(component.paginatedProjects().length).toBe(2);
   });
 
   it('recomputes the translated project content when locale changes', () => {
-    expect(component.projects()[0].name).toBe('Oracle Cat');
+    expect(component.projects()[0].name).toBe('Frontend Architecture Explorer');
 
     component.i18n.setLocale('en-US');
 
-    expect(component.projects()[0].name).toBe('Oracle Cat');
-    expect(component.projects()[0].summary).toContain('AI-powered oracle cat');
+    expect(component.projects()[0].name).toBe('Frontend Architecture Explorer');
+    expect(component.projects()[0].summary).toContain('An interactive playground for');
   });
 });

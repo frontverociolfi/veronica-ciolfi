@@ -76,8 +76,8 @@ describe('Home page', () => {
     const latestProjects = component.latestProjects();
     const latestPosts = component.latestPosts();
 
-    expect(latestProjects.length).toBe(1);
-    expect(latestProjects[0].name).toBe('Oracle Cat');
+    expect(latestProjects.length).toBe(2);
+    expect(latestProjects[0].name).toBe('Frontend Architecture Explorer');
     expect(latestPosts.length).toBe(2);
     expect(latestPosts[0].title).toBe('O Problema Mais Caro do Frontend É a Confusão');
     expect(latestPosts[0].cover).toBe('blog-images/frontend-confusion.png');
@@ -140,7 +140,7 @@ describe('Home page', () => {
       .componentInstance as HomeWhatsappCardComponent;
 
     expect(projectsCard).not.toBeNull();
-    expect((projectsCard.componentInstance as HomeLatestProjectsCardComponent).projects.length).toBe(1);
+    expect((projectsCard.componentInstance as HomeLatestProjectsCardComponent).projects.length).toBe(2);
     expect(postsCard.posts.length).toBe(2);
     expect(experienceCard.experience).toBe(component.experience);
     expect(skillsCard.skills).toBe(component.skills);
